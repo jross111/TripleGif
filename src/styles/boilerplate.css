@@ -1,0 +1,24 @@
+.BoilerPlate {
+  text-align: center;
+}
+
+.BoilerPlate-logo {
+  animation: BoilerPlate-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.BoilerPlate-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.BoilerPlate-intro {
+  font-size: large;
+}
+
+@keyframes BoilerPlate-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
