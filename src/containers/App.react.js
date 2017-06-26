@@ -8,32 +8,29 @@ import Card from '../components/card.react.js'
 import NavBar from '../components/navbar.react.js'
 import SavePreview from '../components/save_preview.react.js'
 import Search from '../components/search.react.js'
+import UrlField from '../components/url_field.react.js'
 
 
 class App extends Component {
   render() {
     return (
     <Container>
-      <Row>
-        <Col> < NavBar /> </Col>
-      </Row>
-
+        <Row>
+          <Col> < NavBar /> </Col>
+        </Row>
 
         <Row>
-          <Col xs="12" md="4" sm="12"> <Search /> < Card /> </Col>
+          <Col  xs="12" md="4" sm="12"> <Search /> < Card /> </Col>
           <Col xs="12" md="4" sm="12"> <Search /> < Card /> </Col>
           <Col xs="12" md="4" sm="12"> <Search /> < Card /> </Col>
         </Row>
 
         <Row>
-          <Col>  </Col>
-          <Col xs="12" sm="12" md="6">< SavePreview /> </Col>
-          <Col> </Col>
+          <Col  xs="12" md="4" sm="12">  </Col>
+          <Col   xs="12" md="4" sm="12">< SavePreview /><UrlField/> </Col>
+          <Col  xs="12" md="4" sm="12"> </Col>
         </Row>
-
-        <Row>
-
-        </Row>
+ 
     </Container>
 
 

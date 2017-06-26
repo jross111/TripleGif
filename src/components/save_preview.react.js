@@ -1,14 +1,13 @@
 import React from 'react';
-import { Card, Button, CardTitle, CardText } from 'reactstrap';
+import { Card, Button, CardTitle, CardText, ButtonGroup } from 'reactstrap';
 
 const SavePreview = (props) => {
   return (
     <div>
-      <Card block inverse color="primary">
-
-        <Button color="secondary">Preview</Button>
-        <Button color="secondary">Save</Button>
-      </Card>
+    <ButtonGroup size="lg">
+      <Button>Preview</Button>
+      <Button>Save</Button>
+    </ButtonGroup>
     </div>
   );
 };
