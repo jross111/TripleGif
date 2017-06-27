@@ -12,6 +12,13 @@ import UrlField from '../components/url_field.react.js'
 
 
 class App extends Component {
+
+state = {
+  images: ["3o7TKwxYkeW0ZvTqsU", "ikXcqqlSNH2Mw", "LLjvtJwvzaTni"]
+}
+
+
+
   render() {
     return (
     <Container>
@@ -20,9 +27,9 @@ class App extends Component {
         </Row>
 
         <Row>
-          <Col  xs="12" md="4" sm="12"> <Search /> < Card /> </Col>
-          <Col xs="12" md="4" sm="12"> <Search /> < Card /> </Col>
-          <Col xs="12" md="4" sm="12"> <Search /> < Card /> </Col>
+          <Col  xs="12" md="4" sm="12"> <Search /> < Card image={this.state.images[0]} /> </Col>
+          <Col xs="12" md="4" sm="12"> <Search /> < Card image={this.state.images[1]} /> </Col>
+          <Col xs="12" md="4" sm="12"> <Search /> < Card image={this.state.images[2]} /> </Col>
         </Row>
 
         <Row>
@@ -30,7 +37,7 @@ class App extends Component {
           <Col   xs="12" md="4" sm="12">< SavePreview /><UrlField/> </Col>
           <Col  xs="12" md="4" sm="12"> </Col>
         </Row>
- 
+
     </Container>
 
 

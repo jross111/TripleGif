@@ -10,7 +10,8 @@ export default (props) => {
       <Col>
       <div>
             <Card>
-              <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+              <CardImg top width="100%" src={"https://media.giphy.com/media/" + props.image + "/giphy.gif"} alt="Card image cap" />
+
               <CardBlock>
                 <Button>Button</Button>
               </CardBlock>
