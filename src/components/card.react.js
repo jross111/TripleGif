@@ -10,7 +10,7 @@ export default (props) => {
       <Col>
       <div>
             <Card>
-              <CardImg top width="100%" src={"https://media.giphy.com/media/" + props.image + "/giphy.gif"} alt="Card image cap" />
+              <CardImg top width="100%" src={"https://media.giphy.com/media/" + props.image + "/giphy.gif"} alt="Card Image" />
 
               <CardBlock>
                 <Button>Button</Button>
