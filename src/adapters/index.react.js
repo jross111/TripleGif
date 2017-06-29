@@ -27,6 +27,8 @@ export function postPhrase(word_1, word_2, word_3){
 
       })
     }).then(response => response.json() )
+    
+
 
 }
 

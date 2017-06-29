@@ -35,6 +35,7 @@ class App extends Component {
     let word_3 = {term:this.state.term_3, gif: this.state.images_3[this.state.shuffle_3]}
 
     postPhrase(word_1, word_2, word_3)
+    .then(response => this.setState({url: response.hash_token}))
 
   }
 
@@ -70,7 +71,7 @@ class App extends Component {
 
         <Row>
           <Col  xs="12" md="4" sm="12">  </Col>
-          <Col   xs="12" md="4" sm="12">< SavePreview createPhrase={this.createPhrase.bind(this)} /><UrlField/> </Col>
+          <Col   xs="12" md="4" sm="12">< SavePreview  createPhrase={this.createPhrase.bind(this)} /><UrlField url={this.state.url}/> </Col>
           <Col  xs="12" md="4" sm="12"> </Col>
         </Row>
 
