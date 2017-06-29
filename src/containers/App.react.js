@@ -9,6 +9,8 @@ import SavePreview from '../components/save_preview.react.js'
 import Search from '../components/search.react.js'
 import UrlField from '../components/url_field.react.js'
 import ThreeCardGroup from "../components/three_card_group.react.js"
+import {fetchGifs} from "../adapters/index.react.js"
+import {postPhrase} from "../adapters/index.react.js"
 
 
 class App extends Component {
@@ -28,20 +30,24 @@ class App extends Component {
   }
 
   createPhrase(){
-    var word_1 = {term:this.state.term_1, gif: this.state.images_1[this.state.shuffle_1]}
-    var word_2 = {term:this.state.term_2, gif: this.state.images_2[this.state.shuffle_2]}
-    var word_3 = {term:this.state.term_3, gif: this.state.images_3[this.state.shuffle_3]}
-    console.log(word_1, word_2, word_3)
+    let word_1 = {term:this.state.term_1, gif: this.state.images_1[this.state.shuffle_1]}
+    let word_2 = {term:this.state.term_2, gif: this.state.images_2[this.state.shuffle_2]}
+    let word_3 = {term:this.state.term_3, gif: this.state.images_3[this.state.shuffle_3]}
+
+    postPhrase(word_1, word_2, word_3)
+
   }
 
   handleTermChange(term, number, term_number) {
-    fetch(`http://api.giphy.com/v1/gifs/search?q=${term}&api_key=dc6zaTOxFJmzC`)
-    .then(result=>result.json())
+    fetchGifs(term, number, term_number)
     .then(items=>this.setState({
       [number]: items.data.map(function(a) {return a.id;},)
     }))
     .then(this.setState({[term_number]: term}))
   }
+
+
+
 
 
     handleShuffle = (shuffle) => {
