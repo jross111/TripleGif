@@ -31,6 +31,7 @@ class App extends Component {
       }
       this.mainPage = this.mainPage.bind(this)
       this.showPage = this.showPage.bind(this)
+
   }
 
   createPhrase(){
@@ -51,8 +52,13 @@ class App extends Component {
     .then(this.setState({[term_number]: term}))
   }
 
+  handlePreview = () => {
+    this.props.history.push("/show")
+  }
+
 
     handleShuffle = (shuffle) => {
+
        this.setState(prevState => ({
          [shuffle]: Math.floor(Math.random() * 24) + 1
        }));
@@ -65,7 +71,7 @@ class App extends Component {
          <ThreeCardGroup shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} images={this.state} onTermChange={this.handleTermChange.bind(this)} onShuffle={this.handleShuffle.bind(this)}/>
          <Row>
            <Col  xs="12" md="4" sm="12">  </Col>
-           <Col   xs="12" md="4" sm="12">< SavePreview  createPhrase={this.createPhrase.bind(this)} /><UrlField url={this.state.url}/> </Col>
+           <Col   xs="12" md="4" sm="12">< SavePreview showPreview={this.handlePreview.bind(this)}  createPhrase={this.createPhrase.bind(this)} /><UrlField url={this.state.url}/> </Col>
            <Col  xs="12" md="4" sm="12"> </Col>
          </Row>
          </div>
@@ -82,6 +88,7 @@ class App extends Component {
 
   render() {
     return (
+      
     <Container>
 
         <Row>

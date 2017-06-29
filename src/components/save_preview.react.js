@@ -5,7 +5,7 @@ const SavePreview = (props) => {
   return (
     <div>
     <ButtonGroup size="lg">
-      <Button>Preview</Button>
+      <Button onClick={props.showPreview}>Preview </Button>
       <Button onClick={props.createPhrase}>Save</Button>
     </ButtonGroup>
     </div>

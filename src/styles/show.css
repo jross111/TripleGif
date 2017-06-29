@@ -1,0 +1,53 @@
+
+
+#container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#primary {
+    float: left;
+    width: 34%;
+    height:100vh;
+    background-color: orange;
+
+}
+
+
+
+#content {
+    float: left;
+    width: 33%;
+    height:100vh;
+    background-color: lightgreen;
+
+}
+
+#secondary {
+    float: left;
+    width: 33%;
+    height:100vh;
+    background-color: lightpink;
+
+}
+
+#footer {
+    clear: boh;
+}
+
+#title {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px;
+}
+
+.background-image {
+  object-fit: contain;
+}
+
+h2 {
+   position: absolute;
+   top: 200px;
+   left: 10%;
+   width: 100%;
+}
