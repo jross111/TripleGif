@@ -6,7 +6,7 @@ const SavePreview = (props) => {
     <div>
     <ButtonGroup size="lg">
       <Button>Preview</Button>
-      <Button>Save</Button>
+      <Button onClick={props.createPhrase}>Save</Button>
     </ButtonGroup>
     </div>
   );
