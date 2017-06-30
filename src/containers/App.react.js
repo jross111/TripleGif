@@ -65,10 +65,9 @@ class App extends Component {
 
 
   handleShuffle = (shuffle) => {
-       this.setState(prevState => ({
-         [shuffle]: Math.floor(Math.random() * 24) + 1
-       }));
-     }
+    var current_shuffle = this.state[shuffle]
+    this.setState( Object.assign({},this.state,{...this.state,[shuffle]: current_shuffle + 1}) )
+   }
 
   mainPage(){
        return(
