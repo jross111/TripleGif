@@ -11,7 +11,7 @@ export default class Search extends React.Component {
   onInputChange(term) {
     if (term !== ""){
       this.setState({term});
-      this.props.onTermChange(term, this.props.number, this.props.term_number);
+      this.props.onTermChange(term, this.props.number, this.props.term_number, this.props.shuffle_number);
     }
   }
 

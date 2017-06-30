@@ -9,7 +9,7 @@
     float: left;
     width: 34%;
     height:100vh;
-    background-color: orange;
+
 
 }
 
@@ -18,7 +18,7 @@
     float: left;
     width: 33%;
     height:100vh;
-    background-color: lightgreen;
+
 
 }
 
@@ -26,7 +26,7 @@
     float: left;
     width: 33%;
     height:100vh;
-    background-color: lightpink;
+
 
 }
 
@@ -41,7 +41,11 @@
 }
 
 .background-image {
-  object-fit: contain;
+
+  width: 100%;
+  object-fit: cover;
+
+
 }
 
 h2 {
@@ -49,4 +53,25 @@ h2 {
    top: 200px;
    left: 10%;
    width: 100%;
+}
+
+
+div.horizontal {
+    display: flex;
+    justify-content: center;
+
+}
+
+div.vertical {
+    display: flex;
+
+
+    justify-content: center;
+}
+
+div.div3 {
+    background-color: #fff;
+
+    width: 100%;
+    height: 100%;
 }

@@ -45,11 +45,12 @@ class App extends Component {
   }
 
 
-  handleTermChange(term, number, term_number) {
+  handleTermChange(term, number, term_number, shuffle_num) {
     fetchGifs(term, number, term_number)
     .then(gifs => {return gifs.data.map( gifObj => gifObj.id )})
     .then( gifObjIds => {console.log(this.state);this.setState( Object.assign({},this.state,{images:{...this.state.images,[number]:gifObjIds}}) );console.log(this.state)} )
     .then(this.setState({[term_number]: term}))
+    .then(this.setState({[shuffle_num]: 0}))
   }
 
 
@@ -79,7 +80,7 @@ class App extends Component {
 
   showPage(){
        return(
-         <ShowPage term_1={this.state.term_1}/>
+         <ShowPage images={this.state.images} shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} term_1={this.state.term_1}/>
        )
      }
 
