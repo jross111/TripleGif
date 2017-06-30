@@ -19,9 +19,12 @@ class App extends Component {
   constructor(){
     super()
       this.state = {
-          images_1: ["3o7TKwxYkeW0ZvTqsU"],
+        images:{
+          images_1: ["3o7TKwxYkeW0ZvTqsU","fasdfasdf"],
           images_2: ["ikXcqqlSNH2Mw"],
-          images_3: ["LLjvtJwvzaTni"],
+          images_3: ["LLjvtJwvzaTni"]
+        },
+
           shuffle_1: 0,
           shuffle_2: 0,
           shuffle_3: 0,
@@ -31,44 +34,40 @@ class App extends Component {
       }
       this.mainPage = this.mainPage.bind(this)
       this.showPage = this.showPage.bind(this)
-
   }
 
   createPhrase(){
-    let word_1 = {term:this.state.term_1, gif: this.state.images_1[this.state.shuffle_1]}
-    let word_2 = {term:this.state.term_2, gif: this.state.images_2[this.state.shuffle_2]}
-    let word_3 = {term:this.state.term_3, gif: this.state.images_3[this.state.shuffle_3]}
-
+    let word_1 = {term:this.state.term_1, gif: this.state.images.images_1[this.state.shuffle_1]}
+    let word_2 = {term:this.state.term_2, gif: this.state.images.images_2[this.state.shuffle_2]}
+    let word_3 = {term:this.state.term_3, gif: this.state.images.images_3[this.state.shuffle_3]}
     postPhrase(word_1, word_2, word_3)
     .then(response => this.setState({url: response.hash_token}))
-
   }
+
 
   handleTermChange(term, number, term_number) {
     fetchGifs(term, number, term_number)
-    .then(items=>this.setState({
-      [number]: items.data.map(function(a) {return a.id;},)
-    }))
+    .then(gifs => {return gifs.data.map( gifObj => gifObj.id )})
+    .then( gifObjIds => {console.log(this.state);this.setState( Object.assign({},this.state,{images:{...this.state.images,[number]:gifObjIds}}) );console.log(this.state)} )
     .then(this.setState({[term_number]: term}))
   }
+
 
   handlePreview = () => {
     this.props.history.push("/show")
   }
 
 
-    handleShuffle = (shuffle) => {
-
+  handleShuffle = (shuffle) => {
        this.setState(prevState => ({
          [shuffle]: Math.floor(Math.random() * 24) + 1
        }));
      }
 
-     mainPage(){
-
+  mainPage(){
        return(
          <div>
-         <ThreeCardGroup shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} images={this.state} onTermChange={this.handleTermChange.bind(this)} onShuffle={this.handleShuffle.bind(this)}/>
+         <ThreeCardGroup shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} images={this.state.images} onTermChange={this.handleTermChange.bind(this)} onShuffle={this.handleShuffle.bind(this)}/>
          <Row>
            <Col  xs="12" md="4" sm="12">  </Col>
            <Col   xs="12" md="4" sm="12">< SavePreview showPreview={this.handlePreview.bind(this)}  createPhrase={this.createPhrase.bind(this)} /><UrlField url={this.state.url}/> </Col>
@@ -78,8 +77,7 @@ class App extends Component {
        )
      }
 
-
-     showPage(){
+  showPage(){
        return(
          <ShowPage term_1={this.state.term_1}/>
        )
@@ -88,21 +86,25 @@ class App extends Component {
 
   render() {
     return (
-      
+
+      <div>
+        <Route exact path='/show' render={this.showPage} />
+
     <Container>
 
         <Row>
           <Col> < NavBar /> </Col>
         </Row>
         <Row>
+
+
         <Route exact path='/' render={this.mainPage} />
-        <Route exact path='/show' render={this.showPage} />
 
         </Row>
 
 
     </Container>
-
+    </div>
 
 
     );
