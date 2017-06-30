@@ -1,5 +1,4 @@
 
-
 #container {
     width: 100%;
     margin: 0 auto;
@@ -48,12 +47,42 @@
 
 }
 
-h2 {
+#term1 {
    position: absolute;
-   top: 200px;
-   left: 10%;
-   width: 100%;
+   top: 40%;
+   left: %;
+   width: 33%;
+   color: white;
+   font-family: 'Bangers', cursive;
+   font-size: 100px;
+   text-align: center;
+   -webkit-text-stroke: 3px black;
 }
+
+#term2 {
+   position: absolute;
+   top: 40%;
+   left: auto;
+   width: 34%;
+   color: white;
+   font-family: 'Bangers', cursive;
+   font-size: 100px;
+   text-align: center;
+   -webkit-text-stroke: 3px black;
+}
+
+
+#term3 {
+   position: absolute;
+   top: 40%;
+   width: 33%;
+   color: white;
+   font-family: 'Bangers', cursive;
+   font-size: 100px;
+   text-align: center;
+  -webkit-text-stroke: 3px black;
+}
+
 
 
 div.horizontal {
