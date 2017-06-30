@@ -53,6 +53,11 @@ class App extends Component {
     .then(this.setState({[shuffle_num]: 0}))
   }
 
+  handleBlankTerm(term, number, term_number){
+    this.setState( Object.assign({},this.state,{images:{...this.state.images,[number]:["iF3M9gPPCdulq"]}}) )
+    this.setState({[term_number]: term})
+  }
+
 
   handlePreview = () => {
     this.props.history.push("/show")
@@ -68,7 +73,7 @@ class App extends Component {
   mainPage(){
        return(
          <div>
-         <ThreeCardGroup shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} images={this.state.images} onTermChange={this.handleTermChange.bind(this)} onShuffle={this.handleShuffle.bind(this)}/>
+         <ThreeCardGroup shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} images={this.state.images} onTermChange={this.handleTermChange.bind(this)} onShuffle={this.handleShuffle.bind(this)} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3} blankTerm={this.handleBlankTerm.bind(this)}/>
          <Row>
            <Col  xs="12" md="4" sm="12">  </Col>
            <Col   xs="12" md="4" sm="12">< SavePreview showPreview={this.handlePreview.bind(this)}  createPhrase={this.createPhrase.bind(this)} /><UrlField url={this.state.url}/> </Col>

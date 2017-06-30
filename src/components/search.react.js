@@ -12,6 +12,9 @@ export default class Search extends React.Component {
     if (term !== ""){
       this.setState({term});
       this.props.onTermChange(term, this.props.number, this.props.term_number, this.props.shuffle_number);
+    } else {
+      this.props.blankTerm(term, this.props.number, this.props.term_number)
+
     }
   }
 
@@ -22,7 +25,7 @@ export default class Search extends React.Component {
 <Form>
   <FormGroup>
     <InputGroup>
-        <Input onChange={event => this.onInputChange(event.target.value)} size="lg" type="search" name="search" id="exampleSearch" placeholder="search placeholder" value={this.props.value} />
+        <Input onChange={event => this.onInputChange(event.target.value)} size="lg" type="search" name="search" id="exampleSearch" placeholder="search placeholder" value={this.props.term} />
         <InputGroupButton size="m" color="info">🔍</InputGroupButton>
       </InputGroup>
   </FormGroup>
