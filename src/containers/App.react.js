@@ -36,7 +36,8 @@ class App extends Component {
           term_3: "fraiser",
           gif_1: "iF3M9gPPCdulq",
           gif_2: "iF3M9gPPCdulq",
-          gif_3: "iF3M9gPPCdulq"
+          gif_3: "iF3M9gPPCdulq",
+          url: ""
       }
       this.mainPage = this.mainPage.bind(this)
       this.showPage = this.showPage.bind(this)
@@ -51,12 +52,11 @@ class App extends Component {
     let word_2 = {term:this.state.term_2, gif: this.state.images.images_2[this.state.shuffle_2]}
     let word_3 = {term:this.state.term_3, gif: this.state.images.images_3[this.state.shuffle_3]}
     postPhrase(word_1, word_2, word_3)
-    .then(response => this.setState({url: response.hash_token}))
+    .then(response => this.setState({url: `http://localhost:3001/show/` + `${response.hash_token}`}))
   }
 
 handlePhraseFetch(url_token){
   fetchPhrase(url_token)
-
   .then(res => {this.setState(res)})
   .then(this.showPage())
 
@@ -72,6 +72,7 @@ handlePhraseFetch(url_token){
     .then( gifObjIds => {this.setState( Object.assign({},this.state,{images:{...this.state.images,[number]:gifObjIds}}) )} )
     .then(this.setState({[term_number]: term}))
     .then(this.setState({[shuffle_num]: 0}))
+    .then(this.setState({url: ""}))
   }
 
   handleBlankTerm(term, number, term_number){
@@ -89,6 +90,7 @@ handlePhraseFetch(url_token){
   handleShuffle = (shuffle) => {
     var current_shuffle = this.state[shuffle]
     this.setState( Object.assign({},this.state,{...this.state,[shuffle]: current_shuffle + 1}) )
+    this.setState({url: ""})
    }
 
   mainPage(){
