@@ -11,7 +11,7 @@ export default class ShowPage extends React.Component {
     var url_token = this._reactInternalInstance._context.router.route.location.pathname.slice(6)
     console.log(url_bar)
     console.log(url_token)
-     if ( url_bar !== "show" ) {
+     if ( url_bar !== "show!" ) {
     this.props.fetchPhrase(url_token)
 
 

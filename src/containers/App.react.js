@@ -34,9 +34,9 @@ class App extends Component {
           term_1: "three",
           term_2: "word",
           term_3: "fraiser",
-          gif_1: "",
-          gif_2: "",
-          gif_3: "iNJmdpZ8gp5sI"
+          gif_1: "iF3M9gPPCdulq",
+          gif_2: "iF3M9gPPCdulq",
+          gif_3: "iF3M9gPPCdulq"
       }
       this.mainPage = this.mainPage.bind(this)
       this.showPage = this.showPage.bind(this)
@@ -81,7 +81,7 @@ handlePhraseFetch(url_token){
 
 
   handlePreview = () => {
-    this.props.history.push("/show")
+    this.props.history.push("/show!")
 
     }
 
@@ -127,7 +127,7 @@ handlePhraseFetch(url_token){
   render() {
     return (
     <div>
-        <Route exact path='/show' render={this.showPage} />
+        <Route exact path='/show!' render={this.showPage} />
         <Route path='/show/' render={this.showPageSaved} />
       <Container>
         <Route exact path='/' render={this.mainPage} />
