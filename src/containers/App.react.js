@@ -14,6 +14,7 @@ import ThreeCardGroup from "../components/three_card_group.react.js"
 import ShowPage from "../components/show.react.js"
 import {fetchGifs} from "../adapters/index.react.js"
 import {postPhrase} from "../adapters/index.react.js"
+import {fetchPhrase} from "../adapters/index.react.js"
 
 
 class App extends Component {
@@ -38,6 +39,8 @@ class App extends Component {
   }
 
 
+
+
   createPhrase(){
     let word_1 = {term:this.state.term_1, gif: this.state.images.images_1[this.state.shuffle_1]}
     let word_2 = {term:this.state.term_2, gif: this.state.images.images_2[this.state.shuffle_2]}
@@ -45,6 +48,12 @@ class App extends Component {
     postPhrase(word_1, word_2, word_3)
     .then(response => this.setState({url: response.hash_token}))
   }
+
+handlePhraseFetch(url_token){
+  fetchPhrase(url_token)
+  .then(console.log)
+
+}
 
 
   handleTermChange(term, number, term_number, shuffle_num) {
@@ -91,7 +100,7 @@ class App extends Component {
   showPage(){
        return(
         <Router>
-         <ShowPage images={this.state.images} shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3}/>
+         <ShowPage images={this.state.images} shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3} fetchPhrase={this.handlePhraseFetch.bind(this)}/>
         </Router>
        )
      }
@@ -99,7 +108,7 @@ class App extends Component {
   render() {
     return (
     <div>
-        <Route exact path='/show' render={this.showPage} />
+        <Route path='/show' render={this.showPage} />
       <Container>
         <Route exact path='/' render={this.mainPage} />
       </Container>

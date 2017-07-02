@@ -7,8 +7,6 @@ export function fetchGifs(term, number, term_number){
   .then(res => res.json())
 }
 
-
-
 export function postPhrase(word_1, word_2, word_3){
 
   return fetch(`http://localhost:3000/api/v1/phrases`, {
@@ -32,6 +30,21 @@ export function postPhrase(word_1, word_2, word_3){
 
 }
 
+export function fetchPhrase(hash_token){
+
+  return fetch(`http://localhost:3000/api/v1/phrases/${hash_token}`, {
+      method: 'GET',
+      headers:   {'content-type': 'application/json',
+                  'accept': 'application/json',
+                  'token': hash_token
+                }
+    }).then(response => response.json() )
+
+
+
+}
+
+
 
 
 
@@ -39,6 +52,6 @@ export function postPhrase(word_1, word_2, word_3){
 function headers(){
   return {
     'content-type': 'application/json',
-    'accept': 'application/json',
+    'accept': 'application/json'
   }
 }
