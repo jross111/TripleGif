@@ -8,25 +8,18 @@
     float: left;
     width: 34%;
     height:100vh;
-
-
 }
-
 
 #content {
     float: left;
     width: 33%;
     height:100vh;
-
-
 }
 
 #secondary {
     float: left;
     width: 33%;
     height:100vh;
-
-
 }
 
 #footer {
@@ -40,11 +33,8 @@
 }
 
 .background-image {
-
   width: 100%;
-  object-fit: cover;
-
-
+  object-fit: cover
 }
 
 #term1 {
@@ -71,7 +61,6 @@
    -webkit-text-stroke: 3px black;
 }
 
-
 #term3 {
    position: absolute;
    top: 40%;
@@ -83,24 +72,18 @@
   -webkit-text-stroke: 3px black;
 }
 
-
-
 div.horizontal {
     display: flex;
     justify-content: center;
-
 }
 
 div.vertical {
     display: flex;
-
-
     justify-content: center;
 }
 
 div.div3 {
     background-color: #fff;
-
     width: 100%;
     height: 100%;
 }

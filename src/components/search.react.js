@@ -7,18 +7,24 @@ export default class Search extends React.Component {
       this.state = {term: ""}
   }
 
-
   onInputChange(term) {
     if (term !== ""){
       this.setState({term});
       this.props.onTermChange(term, this.props.number, this.props.term_number, this.props.shuffle_number);
     } else {
       this.props.blankTerm(term, this.props.number, this.props.term_number)
-
     }
   }
 
-
+  componentDidMount(){
+    var term = this.props.term
+    if (term !== ""){
+      this.setState({term});
+      this.props.onTermChange(term, this.props.number, this.props.term_number);
+    } else {
+      this.props.blankTerm(term, this.props.number, this.props.term_number)
+    }
+  }
 
   render() {
     return (
