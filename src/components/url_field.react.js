@@ -5,7 +5,7 @@ export default class UrlField extends React.Component {
   render() {
     return (
       <Form>
-        <Input readOnly="true" placeholder="generated URL" size="lg" value={`http://localhost:3001/` + `${this.props.url}`} />
+        <Input readOnly="true" placeholder="generated URL" size="lg" value={`http://localhost:3001/show/` + `${this.props.url}`} />
       </Form>
     );
   }

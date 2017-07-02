@@ -12,6 +12,7 @@ import Search from '../components/search.react.js'
 import UrlField from '../components/url_field.react.js'
 import ThreeCardGroup from "../components/three_card_group.react.js"
 import ShowPage from "../components/show.react.js"
+import ShowPageSaved from "../components/show_saved.react.js"
 import {fetchGifs} from "../adapters/index.react.js"
 import {postPhrase} from "../adapters/index.react.js"
 import {fetchPhrase} from "../adapters/index.react.js"
@@ -32,10 +33,14 @@ class App extends Component {
           shuffle_3: 0,
           term_1: "three",
           term_2: "word",
-          term_3: "fraiser"
+          term_3: "fraiser",
+          gif_1: "",
+          gif_2: "",
+          gif_3: "iNJmdpZ8gp5sI"
       }
       this.mainPage = this.mainPage.bind(this)
       this.showPage = this.showPage.bind(this)
+      this.showPageSaved = this.showPageSaved.bind(this)
   }
 
 
@@ -51,7 +56,12 @@ class App extends Component {
 
 handlePhraseFetch(url_token){
   fetchPhrase(url_token)
-  .then(console.log)
+
+  .then(res => {this.setState(res)})
+  .then(this.showPage())
+
+
+
 
 }
 
@@ -105,10 +115,20 @@ handlePhraseFetch(url_token){
        )
      }
 
+   showPageSaved(){
+        return(
+          <Router>
+          <ShowPageSaved images_1={this.state.gif_1} images_2={this.state.gif_2} images_3={this.state.gif_3} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3} fetchPhrase={this.handlePhraseFetch.bind(this)}/>
+          </Router>
+        )
+      }
+
+
   render() {
     return (
     <div>
-        <Route path='/show' render={this.showPage} />
+        <Route exact path='/show' render={this.showPage} />
+        <Route path='/show/' render={this.showPageSaved} />
       <Container>
         <Route exact path='/' render={this.mainPage} />
       </Container>
