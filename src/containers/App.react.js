@@ -112,7 +112,7 @@ handlePhraseFetch(url_token){
   showPage(){
        return(
         <Router>
-         <ShowPage images={this.state.images} shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3} fetchPhrase={this.handlePhraseFetch.bind(this)}/>
+         <ShowPage theme_term_1={this.state.theme_term_1} theme_term_2={this.state.theme_term_2} theme_term_3={this.state.theme_term_3} theme_image_1={this.state.theme_image_1} theme_image_2={this.state.theme_image_2} theme_image_3={this.state.theme_image_3} images={this.state.images} shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3} fetchPhrase={this.handlePhraseFetch.bind(this)}/>
         </Router>
        )
      }

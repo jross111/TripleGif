@@ -1,10 +1,7 @@
 import React from 'react';
 import '../styles/show.css';
 
-
-
 export default class ShowPage extends React.Component {
-
 
   componentDidMount() {
     var url_bar = this._reactInternalInstance._context.router.route.location.pathname.slice(1)
@@ -13,21 +10,17 @@ export default class ShowPage extends React.Component {
     console.log(url_token)
      if ( url_bar !== "show!" ) {
     this.props.fetchPhrase(url_token)
-
-
      }
    }
 
 
-
   render(props) {
-
     return (
 
   <container id="container">
     <div id="content">
 
-      <div className="horizontal div3">
+      <div className= "horizontal div3">
         <h1 id="term1"> {this.props.term_1} </h1>
         <img className="background-image" src={"https://media.giphy.com/media/" + this.props.images.images_1[`${this.props.shuffle_1}`] + "/giphy.gif"} alt="Image 1"/>
       </div>
