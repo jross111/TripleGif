@@ -27,17 +27,32 @@ class App extends Component {
           images_2: ["3oKIPAGZzx2PY1wYjC"],
           images_3: ["iNJmdpZ8gp5sI"]
         },
+        words: [
+          {
+            text_theme: "text_1_vanilla",
+            gif_theme: "gif_1_vanilla"
+          },
+          {
+            text_theme: "text_2_vanilla",
+            gif_theme: "gif_2_vanilla"
+          },
+          {
+            text_theme: "text_3_vanilla",
+            gif_theme: "gif_3_vanilla"
+          }
 
-          shuffle_1: 0,
-          shuffle_2: 0,
-          shuffle_3: 0,
-          term_1: "three",
-          term_2: "word",
-          term_3: "fraiser",
-          gif_1: "iF3M9gPPCdulq",
-          gif_2: "iF3M9gPPCdulq",
-          gif_3: "iF3M9gPPCdulq",
-          url: ""
+        ],
+        shuffle_1: 0,
+        shuffle_2: 0,
+        shuffle_3: 0,
+        term_1: "three",
+        term_2: "word",
+        term_3: "fraiser",
+        gif_1: "iF3M9gPPCdulq",
+        gif_2: "iF3M9gPPCdulq",
+        gif_3: "iF3M9gPPCdulq",
+        url: "",
+
       }
       this.mainPage = this.mainPage.bind(this)
       this.showPage = this.showPage.bind(this)
@@ -48,17 +63,21 @@ class App extends Component {
 
 
   createPhrase(){
-    let word_1 = {term:this.state.term_1, gif: this.state.images.images_1[this.state.shuffle_1]}
-    let word_2 = {term:this.state.term_2, gif: this.state.images.images_2[this.state.shuffle_2]}
-    let word_3 = {term:this.state.term_3, gif: this.state.images.images_3[this.state.shuffle_3]}
+    let word_1 = {text:this.state.term_1, gif_id: this.state.images.images_1[this.state.shuffle_1], text_theme: this.state.words[0].text_theme, gif_theme: this.state.words[0].gif_theme}
+    let word_2 = {text:this.state.term_2, gif_id: this.state.images.images_2[this.state.shuffle_2], text_theme: this.state.words[1].text_theme, gif_theme: this.state.words[1].gif_theme}
+    let word_3 = {text:this.state.term_3, gif_id: this.state.images.images_3[this.state.shuffle_3], text_theme: this.state.words[2].text_theme, gif_theme: this.state.words[2].gif_theme}
     postPhrase(word_1, word_2, word_3)
     .then(response => this.setState({url: `http://localhost:3001/show/` + `${response.hash_token}`}))
   }
 
 handlePhraseFetch(url_token){
   fetchPhrase(url_token)
-  .then(res => {this.setState(res)})
-  .then(this.showPage())
+  .then( data => {this.setState( Object.assign({},this.state,  data ) )} )
+
+
+
+
+
 
 
 
@@ -112,7 +131,7 @@ handlePhraseFetch(url_token){
   showPage(){
        return(
         <Router>
-         <ShowPage theme_term_1={this.state.theme_term_1} theme_term_2={this.state.theme_term_2} theme_term_3={this.state.theme_term_3} theme_image_1={this.state.theme_image_1} theme_image_2={this.state.theme_image_2} theme_image_3={this.state.theme_image_3} images={this.state.images} shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3} fetchPhrase={this.handlePhraseFetch.bind(this)}/>
+         <ShowPage words={this.state.words} images={this.state.images} shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3}  fetchPhrase={this.handlePhraseFetch.bind(this)}/>
         </Router>
        )
      }
@@ -120,7 +139,7 @@ handlePhraseFetch(url_token){
    showPageSaved(){
         return(
           <Router>
-          <ShowPageSaved images_1={this.state.gif_1} images_2={this.state.gif_2} images_3={this.state.gif_3} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3} fetchPhrase={this.handlePhraseFetch.bind(this)}/>
+          <ShowPageSaved words={this.state.words} fetchPhrase={this.handlePhraseFetch.bind(this)}/>
           </Router>
         )
       }

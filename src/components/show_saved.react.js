@@ -22,33 +22,39 @@ export default class ShowPageSaved extends React.Component {
 
 
   render(props) {
+    console.log(props)
 
-    return (
+    if (this.props.words[2].gif_id) {
+      return (
 
-  <container id="container">
-    <div id="content">
+    <container id="container">
+      <div id="content">
 
-      <div className="horizontal div3">
-        <h1 id="term1"> {this.props.term_1} </h1>
-        <img className="background-image" src={"https://media.giphy.com/media/" + this.props.images_1 + "/giphy.gif"} alt="Image 1"/>
-      </div>
-    </div>
-
-    <div id="primary">
         <div className="horizontal div3">
-          <h1 id="term2"> {this.props.term_2} </h1>
-          <img className="background-image" src={"https://media.giphy.com/media/" + this.props.images_2 + "/giphy.gif"} alt="Image 2"/>
+          <h1 id={this.props.words[0].text_theme}>  {this.props.words[0].text} </h1>
+          <img className="background-image" src={"https://media.giphy.com/media/" + this.props.words[0].gif_id + "/giphy.gif"} alt="Image 1"/>
         </div>
-    </div>
-
-    <div id="secondary">
-      <div className="horizontal div3">
-        <h1 id="term3"> {this.props.term_3} </h1>
-        <img className="background-image" src={"https://media.giphy.com/media/" + this.props.images_3 + "/giphy.gif"} alt="Image 3"/>
       </div>
-    </div>
-  </container>
-    );
+
+      <div id="primary">
+          <div className="horizontal div3">
+            <h1 id={this.props.words[1].text_theme}>{this.props.words[1].text} </h1>
+            <img className="background-image" src={"https://media.giphy.com/media/" + this.props.words[1].gif_id + "/giphy.gif"} alt="Image 2"/>
+          </div>
+      </div>
+
+      <div id="secondary">
+        <div className="horizontal div3">
+          <h1 id={this.props.words[2].text_theme}> {this.props.words[2].text} </h1>
+          <img className="background-image" src={"https://media.giphy.com/media/" + this.props.words[2].gif_id + "/giphy.gif"} alt="Image 3"/>
+        </div>
+      </div>
+    </container>
+      );
+    }
+    else {
+      return <h1>Maybe loading</h1>
+    }
   }
 
 }

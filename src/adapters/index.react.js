@@ -15,15 +15,12 @@ export function postPhrase(word_1, word_2, word_3){
       body: JSON.stringify({
         phrase: {
           user_id: 1,
-          gif_1: word_1.gif,
-          term_1: word_1.term,
-          gif_2: word_2.gif,
-          term_2: word_2.term,
-          gif_3: word_3.gif,
-          term_3: word_3.term
-        }
-
-      })
+          words : [
+            {text: word_1.text, gif_id: word_1.gif_id, text_theme: word_1.text_theme, gif_theme: word_1.gif_theme},
+            {text: word_2.text, gif_id: word_2.gif_id, text_theme: word_2.text_theme, gif_theme: word_2.gif_theme},
+            {text: word_3.text, gif_id: word_3.gif_id, text_theme: word_3.text_theme, gif_theme: word_3.gif_theme},
+          ]
+      }})
     }).then(response => response.json() )
 
 
