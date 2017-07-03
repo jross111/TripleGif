@@ -2,7 +2,6 @@ import React from 'react';
 import '../styles/show.css';
 
 
-
 export default class ShowPageSaved extends React.Component {
 
 
@@ -13,7 +12,6 @@ export default class ShowPageSaved extends React.Component {
     console.log(url_token)
      if ( url_bar !== "show" ) {
     this.props.fetchPhrase(url_token)
-
 
      }
    }
