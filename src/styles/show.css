@@ -2,24 +2,29 @@
 #container {
     width: 100%;
     margin: 0 auto;
+
 }
 
 #primary {
     float: left;
     width: 34%;
     height:100vh;
+    background-color: #FF0000;
+
 }
 
 #content {
     float: left;
     width: 33%;
     height:100vh;
+    background-color: #FF0000;
 }
 
 #secondary {
     float: left;
     width: 33%;
     height:100vh;
+    background-color: #FF0000;
 }
 
 #footer {
@@ -34,7 +39,9 @@
 
 .background-image {
   width: 100%;
-  object-fit: cover
+  object-fit: cover;
+
+
 }
 
 #text_1_vanilla {
@@ -47,6 +54,7 @@
    font-size: 100px;
    text-align: center;
    -webkit-text-stroke: 3px black;
+
 }
 
 #text_2_vanilla {
@@ -77,11 +85,11 @@
    top: 40%;
    left: %;
    width: 33%;
-   color: red;
-   font-family: 'Bangers', cursive;
+   color: black;
+   font-family: 'Russo One', sans-serif;
    font-size: 100px;
    text-align: center;
-   -webkit-text-stroke: 3px black;
+   -webkit-text-stroke: 3px white;
 }
 
 #text_2_spicy {
@@ -89,22 +97,23 @@
    top: 40%;
    left: auto;
    width: 34%;
-   color: red;
-   font-family: 'Bangers', cursive;
+   color: black;
+   font-family: 'Russo One', sans-serif;
    font-size: 100px;
    text-align: center;
-   -webkit-text-stroke: 3px black;
+   -webkit-text-stroke: 3px white;
+
 }
 
 #text_3_spicy {
    position: absolute;
    top: 40%;
    width: 33%;
-   color: red;
-   font-family: 'Bangers', cursive;
+   color: black;
+   font-family: 'Russo One', sans-serif;
    font-size: 100px;
    text-align: center;
-  -webkit-text-stroke: 3px black;
+  -webkit-text-stroke: 3px white;
 }
 
 div.horizontal {
@@ -118,19 +127,23 @@ div.vertical {
 }
 
 div.div3 {
-    background-color: #fff;
     width: 100%;
     height: 100%;
 }
 
-#red {
-   position: absolute;
-   top: 40%;
-   left: %;
-   width: 33%;
-   color: red;
-   font-family: 'Bangers', cursive;
-   font-size: 100px;
-   text-align: center;
-   -webkit-text-stroke: 3px black;
+div.div3#gif_1_spicy {
+    width: 100%;
+    height: 100%;
+    opacity:0.5;
+}
+div.div3#gif_2_spicy {
+    width: 100%;
+    height: 100%;
+    opacity:0.5;
+}
+
+div.div3#gif_3_spicy {
+    width: 100%;
+    height: 100%;
+    opacity:0.5;
 }
