@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/show.css';
 import '../styles/obnoxious.css';
 import '../styles/animate.css';
+import image1 from '../assets/images/giphy.png'
 
 export default class ShowPage extends React.Component {
 
@@ -42,7 +43,9 @@ export default class ShowPage extends React.Component {
         <img className="background-image" src={"https://media.giphy.com/media/" + this.props.images.images_3[`${this.props.shuffle_3}`] + "/giphy.gif"} alt="Image 3"/>
       </div>
       <h1 className="animated intensifies bounceInRight" id={this.props.words[2].text_theme}> {this.props.term_3} </h1>
+
     </div>
+    <img id="watermark" src={image1}/>
   </container>
     );
   }
