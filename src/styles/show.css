@@ -90,6 +90,7 @@
    font-size: 100px;
    text-align: center;
    -webkit-text-stroke: 3px white;
+   text-transform: uppercase;
 }
 
 #text_2_spicy {
@@ -102,6 +103,7 @@
    font-size: 100px;
    text-align: center;
    -webkit-text-stroke: 3px white;
+   text-transform: uppercase;
 
 }
 
@@ -114,6 +116,7 @@
    font-size: 100px;
    text-align: center;
   -webkit-text-stroke: 3px white;
+  text-transform: uppercase;
 }
 
 div.horizontal {

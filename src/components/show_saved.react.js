@@ -33,21 +33,21 @@ export default class ShowPageSaved extends React.Component {
         <div className= "horizontal div3" id={this.props.words[0].gif_theme}>
           <img className="background-image" src={"https://media.giphy.com/media/" + this.props.words[0].gif_id + "/giphy.gif"} alt="Image 1"/>
         </div>
-        <h1 className="animated intensifies" id={this.props.words[0].text_theme}>  {this.props.words[0].text} </h1>
+        <h1 className="animated intensifies bounceInUp" id={this.props.words[0].text_theme}>  {this.props.words[0].text} </h1>
       </div>
 
       <div id="primary">
       <div className="horizontal div3" id={this.props.words[1].gif_theme}>
             <img className="background-image" src={"https://media.giphy.com/media/" + this.props.words[1].gif_id + "/giphy.gif"} alt="Image 2"/>
           </div>
-          <h1 className="animated intensifies" id={this.props.words[1].text_theme}>{this.props.words[1].text} </h1>
+          <h1 className="animated intensifies bounceInDown" id={this.props.words[1].text_theme}>{this.props.words[1].text} </h1>
       </div>
 
       <div id="secondary">
       <div className="horizontal div3" id={this.props.words[2].gif_theme}>
           <img className="background-image" src={"https://media.giphy.com/media/" + this.props.words[2].gif_id + "/giphy.gif"} alt="Image 3"/>
         </div>
-        <h1 className="animated intensifies" id={this.props.words[2].text_theme}> {this.props.words[2].text} </h1>
+        <h1 className="animated intensifies bounceInRight" id={this.props.words[2].text_theme}> {this.props.words[2].text} </h1>
       </div>
     </container>
       );
