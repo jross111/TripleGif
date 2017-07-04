@@ -1,6 +1,8 @@
 import React from 'react';
 import '../styles/show.css';
 import '../styles/obnoxious.css';
+import '../styles/animate.css';
+import giphy from '../assets/images/giphy.png'
 
 
 export default class ShowPageSaved extends React.Component {
@@ -49,6 +51,7 @@ export default class ShowPageSaved extends React.Component {
         </div>
         <h1 className="animated intensifies bounceInRight" id={this.props.words[2].text_theme}> {this.props.words[2].text} </h1>
       </div>
+      <img id="watermark" src={giphy}/>
     </container>
       );
     }

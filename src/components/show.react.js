@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/show.css';
 import '../styles/obnoxious.css';
 import '../styles/animate.css';
-import image1 from '../assets/images/giphy.png'
+import giphy from '../assets/images/giphy.png'
 
 export default class ShowPage extends React.Component {
 
@@ -45,7 +45,7 @@ export default class ShowPage extends React.Component {
       <h1 className="animated intensifies bounceInRight" id={this.props.words[2].text_theme}> {this.props.term_3} </h1>
 
     </div>
-    <img id="watermark" src={image1}/>
+    <img id="watermark" src={giphy}/>
   </container>
     );
   }
