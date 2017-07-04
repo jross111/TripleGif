@@ -13,6 +13,7 @@ import UrlField from '../components/url_field.react.js'
 import ThreeCardGroup from "../components/three_card_group.react.js"
 import ShowPage from "../components/show.react.js"
 import ShowPageSaved from "../components/show_saved.react.js"
+import RadioButtons from "../components/radio_buttons.react.js"
 import {fetchGifs} from "../adapters/index.react.js"
 import {postPhrase} from "../adapters/index.react.js"
 import {fetchPhrase} from "../adapters/index.react.js"
@@ -27,7 +28,9 @@ class App extends Component {
           images_2: ["3oKIPAGZzx2PY1wYjC"],
           images_3: ["iNJmdpZ8gp5sI"]
         },
-        words: [
+
+        words:
+        [
           {
             text_theme: "text_1_vanilla",
             gif_theme: "gif_1_vanilla"
@@ -48,19 +51,16 @@ class App extends Component {
         term_1: "three",
         term_2: "word",
         term_3: "fraiser",
-        gif_1: "iF3M9gPPCdulq",
-        gif_2: "iF3M9gPPCdulq",
-        gif_3: "iF3M9gPPCdulq",
         url: "",
+        selectedOption: "vanilla"
 
       }
       this.mainPage = this.mainPage.bind(this)
       this.showPage = this.showPage.bind(this)
       this.showPageSaved = this.showPageSaved.bind(this)
+      this.handleOptionChange = this.handleOptionChange.bind(this)
+      this.handleShuffle = this.handleShuffle.bind(this)
   }
-
-
-
 
   createPhrase(){
     let word_1 = {text:this.state.term_1, gif_id: this.state.images.images_1[this.state.shuffle_1], text_theme: this.state.words[0].text_theme, gif_theme: this.state.words[0].gif_theme}
@@ -70,19 +70,33 @@ class App extends Component {
     .then(response => this.setState({url: `http://localhost:3001/show/` + `${response.hash_token}`}))
   }
 
-handlePhraseFetch(url_token){
-  fetchPhrase(url_token)
-  .then( data => {this.setState( Object.assign({},this.state,  data ) )} )
+  handlePhraseFetch(url_token){
+    fetchPhrase(url_token)
+    .then( data => {this.setState( Object.assign({},this.state,  data ) )} )
+  }
 
-
-
-
-
-
-
-
-
-}
+  handleOptionChange(event){
+    var theme = event.target.value
+    this.setState({selectedOption : theme})
+    this.setState({
+      words:
+       [
+        {
+          text_theme: `text_1_` + `${theme}`,
+          gif_theme: `gif_1_`+ `${theme}`
+        },
+        {
+          text_theme: `text_2_` + `${theme}`,
+          gif_theme: `gif_2_`+ `${theme}`
+        },
+        {
+          text_theme: `text_3_` + `${theme}`,
+          gif_theme: `gif_3_`+ `${theme}`
+        }
+      ]
+    })
+    this.setState({url: ""})
+  }
 
 
   handleTermChange(term, number, term_number, shuffle_num) {
@@ -108,8 +122,16 @@ handlePhraseFetch(url_token){
 
   handleShuffle = (shuffle) => {
     var current_shuffle = this.state[shuffle]
-    this.setState( Object.assign({},this.state,{...this.state,[shuffle]: current_shuffle + 1}) )
-    this.setState({url: ""})
+    if (current_shuffle <= 23){
+      this.setState( Object.assign({},this.state,{...this.state,[shuffle]: current_shuffle + 1}) )
+      this.setState({url: ""})
+    } else {
+      current_shuffle = 0
+      this.setState( Object.assign({},this.state,{...this.state,[shuffle]: current_shuffle + 1}) )
+      this.setState({url: ""})
+    }
+
+
    }
 
   mainPage(){
@@ -121,7 +143,7 @@ handlePhraseFetch(url_token){
          <ThreeCardGroup shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} images={this.state.images} onTermChange={this.handleTermChange.bind(this)} onShuffle={this.handleShuffle.bind(this)} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3} blankTerm={this.handleBlankTerm.bind(this)}/>
          <Row>
            <Col  xs="12" md="4" sm="12">  </Col>
-           <Col   xs="12" md="4" sm="12">< SavePreview showPreview={this.handlePreview.bind(this)}  createPhrase={this.createPhrase.bind(this)} /><UrlField url={this.state.url}/> </Col>
+           <Col   xs="12" md="4" sm="12"><RadioButtons handleOptionChange={this.handleOptionChange} selectedOption={this.state.selectedOption}/>< SavePreview showPreview={this.handlePreview.bind(this)}  createPhrase={this.createPhrase.bind(this)} /><UrlField url={this.state.url}/> </Col>
            <Col  xs="12" md="4" sm="12"> </Col>
          </Row>
       </div>

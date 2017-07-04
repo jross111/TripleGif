@@ -72,6 +72,41 @@
   -webkit-text-stroke: 3px black;
 }
 
+#text_1_spicy {
+   position: absolute;
+   top: 40%;
+   left: %;
+   width: 33%;
+   color: red;
+   font-family: 'Bangers', cursive;
+   font-size: 100px;
+   text-align: center;
+   -webkit-text-stroke: 3px black;
+}
+
+#text_2_spicy {
+   position: absolute;
+   top: 40%;
+   left: auto;
+   width: 34%;
+   color: red;
+   font-family: 'Bangers', cursive;
+   font-size: 100px;
+   text-align: center;
+   -webkit-text-stroke: 3px black;
+}
+
+#text_3_spicy {
+   position: absolute;
+   top: 40%;
+   width: 33%;
+   color: red;
+   font-family: 'Bangers', cursive;
+   font-size: 100px;
+   text-align: center;
+  -webkit-text-stroke: 3px black;
+}
+
 div.horizontal {
     display: flex;
     justify-content: center;
