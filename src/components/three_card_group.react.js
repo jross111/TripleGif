@@ -4,7 +4,9 @@ import { Card, Button, CardImg, CardTitle, CardText, CardDeck,
  import Search from './search.react.js'
  import '../styles/three_card_group.css';
 
+
 const ThreeCardGroup = (props) => {
+  const btn ={backgroundColor: '#23C8DE', border: 0};
   return (
     <CardGroup>
 
@@ -13,7 +15,7 @@ const ThreeCardGroup = (props) => {
         <CardImg top width="100%" src={"https://media.giphy.com/media/" + props.images.images_1[`${props.shuffle_1}`] + "/giphy.gif"} alt="Card image cap 1" />
         <CardBlock/>
         <CardFooter className="card-footer">
-        <Button onClick={() => props.onShuffle("shuffle_1")} color="primary" size="lg" block >Shuffle</Button>
+        <Button onClick={() => props.onShuffle("shuffle_1")} color="primary" style={btn} size="lg" block >Shuffle</Button>
 
         </CardFooter>
       </Card>
@@ -24,7 +26,7 @@ const ThreeCardGroup = (props) => {
         <CardBlock>
         </CardBlock>
         <CardFooter className="card-footer">
-        <Button onClick={() => props.onShuffle("shuffle_2")} color="primary" size="lg" block >Shuffle</Button>
+        <Button onClick={() => props.onShuffle("shuffle_2")} color="primary" style={btn} size="lg" block >Shuffle</Button>
 
         </CardFooter>
       </Card>
@@ -34,7 +36,7 @@ const ThreeCardGroup = (props) => {
 
 
         <CardFooter className="card-footer">
-        <Button color="primary" onClick={() => props.onShuffle("shuffle_3")} size="lg" block>Shuffle</Button>
+        <Button color="primary" style={btn} onClick={() => props.onShuffle("shuffle_3")} size="lg" block>Shuffle</Button>
 
         </CardFooter>
       </Card>

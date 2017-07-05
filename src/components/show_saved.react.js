@@ -3,6 +3,7 @@ import '../styles/show.css';
 import '../styles/obnoxious.css';
 import '../styles/animate.css';
 import giphy from '../assets/images/giphy.png'
+import ryan from '../assets/images/ryan.png'
 
 
 export default class ShowPageSaved extends React.Component {
@@ -56,7 +57,7 @@ export default class ShowPageSaved extends React.Component {
       );
     }
     else {
-      return <h1>Maybe loading</h1>
+      return <div><img id="loading" src={ryan}/><h1 id="loadingText">Three Word Fraiser</h1><p id="loadingText">Ryan is loading a message for you...</p></div>
     }
   }
 

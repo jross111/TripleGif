@@ -164,6 +164,17 @@ div.div3#gif_3_spicy {
        bottom:4px;
        right:3px;
        zoom: 0.8;
+}
 
+#loading {
+  margin-top: 5vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#loadingText {
+
+text-align: center;
 
 }

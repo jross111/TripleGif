@@ -6,7 +6,6 @@ import {BrowserRouter as Router} from 'react-router-dom'
 
 
 import BoilerPlate from '../components/boilerplate.react.js'
-import NavBar from '../components/navbar.react.js'
 import SavePreview from '../components/save_preview.react.js'
 import Search from '../components/search.react.js'
 import UrlField from '../components/url_field.react.js'
@@ -17,42 +16,44 @@ import RadioButtons from "../components/radio_buttons.react.js"
 import {fetchGifs} from "../adapters/index.react.js"
 import {postPhrase} from "../adapters/index.react.js"
 import {fetchPhrase} from "../adapters/index.react.js"
+import giphy from '../assets/images/giphy.png'
+
 
 
 class App extends Component {
   constructor(){
     super()
       this.state = {
-        images:{
-          images_1: ["26AHIbtfGWCi2Q2C4"],
-          images_2: ["3oKIPAGZzx2PY1wYjC"],
-          images_3: ["iNJmdpZ8gp5sI"]
+      images:{
+        images_1: ["26AHIbtfGWCi2Q2C4"],
+        images_2: ["3oKIPAGZzx2PY1wYjC"],
+        images_3: ["iNJmdpZ8gp5sI"]
+      },
+
+      words:
+      [
+        {
+          text_theme: "text_1_vanilla",
+          gif_theme: "gif_1_vanilla"
         },
+        {
+          text_theme: "text_2_vanilla",
+          gif_theme: "gif_2_vanilla"
+        },
+        {
+          text_theme: "text_3_vanilla",
+          gif_theme: "gif_3_vanilla"
+        }
 
-        words:
-        [
-          {
-            text_theme: "text_1_vanilla",
-            gif_theme: "gif_1_vanilla"
-          },
-          {
-            text_theme: "text_2_vanilla",
-            gif_theme: "gif_2_vanilla"
-          },
-          {
-            text_theme: "text_3_vanilla",
-            gif_theme: "gif_3_vanilla"
-          }
-
-        ],
-        shuffle_1: 0,
-        shuffle_2: 0,
-        shuffle_3: 0,
-        term_1: "three",
-        term_2: "word",
-        term_3: "fraiser",
-        url: "",
-        selectedOption: "vanilla"
+      ],
+      shuffle_1: 0,
+      shuffle_2: 0,
+      shuffle_3: 0,
+      term_1: "three",
+      term_2: "word",
+      term_3: "fraiser",
+      url: "",
+      selectedOption: "vanilla"
 
       }
       this.mainPage = this.mainPage.bind(this)
@@ -116,9 +117,7 @@ class App extends Component {
 
   handlePreview = () => {
     this.props.history.push("/show!")
-
     }
-
 
   handleShuffle = (shuffle) => {
     var current_shuffle = this.state[shuffle]
@@ -138,14 +137,29 @@ class App extends Component {
        return(
       <div>
          <Row>
-         <Col xs="12" md="12" sm="12"> <NavBar/> </Col>
+         <Col xs="12" md="12" sm="12"> <h1 id="title"> Three Word Fraiser </h1> </Col>
          </Row>
+        <div id="app-box">
          <ThreeCardGroup shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} images={this.state.images} onTermChange={this.handleTermChange.bind(this)} onShuffle={this.handleShuffle.bind(this)} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3} blankTerm={this.handleBlankTerm.bind(this)}/>
+         </div>
+
+
          <Row>
-           <Col  xs="12" md="4" sm="12">  </Col>
-           <Col   xs="12" md="4" sm="12"><RadioButtons handleOptionChange={this.handleOptionChange} selectedOption={this.state.selectedOption}/>< SavePreview showPreview={this.handlePreview.bind(this)}  createPhrase={this.createPhrase.bind(this)} /><UrlField url={this.state.url}/> </Col>
-           <Col  xs="12" md="4" sm="12"> </Col>
-         </Row>
+           <div id="controls">
+           <Col xs="12" md="12" sm="12"><div><RadioButtons handleOptionChange={this.handleOptionChange} selectedOption={this.state.selectedOption}/></div>< SavePreview showPreview={this.handlePreview.bind(this)}  createPhrase={this.createPhrase.bind(this)} /><div id="url_field"><UrlField url={this.state.url}/></div>  </Col>
+           </div>
+        </Row>
+
+
+        <Row id="footer">
+
+
+        <Col xs="4" md="4" sm="4">  </Col>
+        <Col   xs="4" md="4" sm="4"><div id="jonny"><a target="blank" href="http://jonnyxyz.com/">👨‍💻</a></div> </Col>
+        <Col  xs="4" md="4" sm="4"> <div id="giphy"><img src={giphy}/></div></Col>
+
+        </Row>
+
       </div>
        )
      }
@@ -175,6 +189,7 @@ class App extends Component {
       <Container>
         <Route exact path='/' render={this.mainPage} />
       </Container>
+
     </div>
     );
   }

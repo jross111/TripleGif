@@ -31,8 +31,8 @@ export default class Search extends React.Component {
 <Form>
   <FormGroup>
     <InputGroup>
-        <Input onChange={event => this.onInputChange(event.target.value)} size="lg" type="search" name="search" id="exampleSearch" placeholder="search placeholder" value={this.props.term} />
-        <InputGroupButton size="m" color="info">🔍</InputGroupButton>
+        <Input tabIndex = "1"  onChange={event => this.onInputChange(event.target.value)} size="lg" type="search" name="search" id="exampleSearch" placeholder="search placeholder" value={this.props.term} />
+
       </InputGroup>
   </FormGroup>
 </Form>
