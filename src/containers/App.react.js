@@ -129,7 +129,7 @@ class App extends Component {
       this.setState({url: ""})
     } else {
       current_shuffle = 0
-      this.setState( Object.assign({},this.state,{...this.state,[shuffle]: current_shuffle + 1}) )
+      this.setState( Object.assign({},this.state,{...this.state,[shuffle]: current_shuffle}) )
       this.setState({url: ""})
     }
 
