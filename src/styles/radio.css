@@ -1,20 +1,27 @@
 #Vanilla{
-  font-size: 20px;
+font-size: 20px;
 
 margin-right: 10px;
 }
 
 #Spicy{
 font-size: 20px;
+
+margin-right: 10px;
+}
+
+#Party{
+font-size: 20px;
 margin-left: 0px;
+margin-right: 10px;
 }
 
 #radio_buttons {
-  padding-bottom: 10px;
+  padding-top: 0px;
+  padding-bottom: 15px;
 
 }
 
 #buttons {
-  width: 100%;
   padding-bottom: 12px;
 }

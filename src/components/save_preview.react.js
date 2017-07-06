@@ -4,14 +4,14 @@ import '../styles/radio.css';
 
 const SavePreview = (props) => {
   const btn_yellow ={backgroundColor: '#FFDA40', border: 0 };
-  const btn_pink ={backgroundColor: '#EA4C89', border: 0 };
+  const btn_pink ={backgroundColor: '#EA4C89', border: 0};
   return (
 
     <div>
   <ButtonGroup>
     <Col xs="12" md="12" sm="12">
-      <Button size="lg" color="secondary" style={btn_yellow} onClick={props.showPreview}>Preview </Button>
-      <Button size="lg" color="success" style={btn_pink} onClick={props.createPhrase}>Save</Button>
+      <Button size="lg" color="secondary" style={btn_yellow} onClick={props.showPreview}>&nbsp;&nbsp;&nbsp;Preview&nbsp;&nbsp; </Button>
+      <Button size="lg" color="success" style={btn_pink} onClick={props.createPhrase}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Save&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Button>
     </Col>
   </ButtonGroup>
 

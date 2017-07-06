@@ -126,6 +126,54 @@
   0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
 }
 
+
+#text_1_party {
+  animation: blinker 0.2s linear infinite;
+   position: absolute;
+   top: 40%;
+   left: %;
+   width: 33%;
+   color: pink;
+   font-family: 'Anton', sans-serif;
+   font-size: 8vw;
+   text-align: center;
+   -webkit-text-stroke: 0.2vw black;
+   text-transform: uppercase;
+
+}
+
+#text_2_party {
+  animation: blinker 0.2s linear infinite;
+   position: absolute;
+   top: 40%;
+   left: auto;
+   width: 34%;
+   color: pink;
+   font-family: 'Anton', sans-serif;
+   font-size: 8vw;
+   text-align: center;
+   -webkit-text-stroke: 0.2vw black;
+   text-transform: uppercase;
+}
+
+#text_3_party {
+    animation: blinker 0.2s linear infinite;
+   position: absolute;
+   top: 40%;
+   width: 33%;
+   color: pink;
+   font-family: 'Anton', sans-serif;
+   font-size: 8vw;
+   text-align: center;
+   -webkit-text-stroke: 0.2vw black;
+   text-transform: uppercase;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+
 div.horizontal {
     display: flex;
     justify-content: center;

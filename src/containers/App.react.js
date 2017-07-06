@@ -3,6 +3,8 @@ import '../styles/App.css';
 import { Container, Row, Col, CardDeck} from 'reactstrap';
 import {Switch, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router'
 import {BrowserRouter as Router} from 'react-router-dom'
+import {debounce} from 'throttle-debounce';
+
 
 
 import BoilerPlate from '../components/boilerplate.react.js'
@@ -61,7 +63,8 @@ class App extends Component {
       this.showPageSaved = this.showPageSaved.bind(this)
       this.handleOptionChange = this.handleOptionChange.bind(this)
       this.handleShuffle = this.handleShuffle.bind(this)
-
+      this.triggerFetchGifs = debounce(200, this.triggerFetchGifs.bind(this))
+      this.initialLoad = this.initialLoad.bind(this)
   }
 
 
@@ -102,15 +105,33 @@ class App extends Component {
     this.setState({url: ""})
   }
 
-
-  handleTermChange(term, number, term_number, shuffle_num) {
+  initialLoad(term, number, term_number){
+    var current_term = term_number
     fetchGifs(term, number, term_number)
     .then(gifs => {return gifs.data.map( gifObj => gifObj.id )})
-    .then( gifObjIds => {this.setState( Object.assign({},this.state,{images:{...this.state.images,[number]:gifObjIds}}) )} )
-    .then(this.setState({[term_number]: term}))
-    .then(this.setState({[shuffle_num]: 0}))
-    .then(this.setState({url: ""}))
+    .then( gifObjIds => {
+      if (this.state[current_term] !== "") {
+        this.setState( Object.assign({},this.state,{images:{...this.state.images,[number]:gifObjIds}}) )} })
+
   }
+
+
+  handleTermChange(term, number, term_number, shuffle_num) {
+    this.setState({[term_number]: term})
+    this.setState({[shuffle_num]: 0})
+    this.setState({url: ""})
+    this.triggerFetchGifs(term, number, term_number)
+  }
+
+  triggerFetchGifs(term, number, term_number){
+    var current_term = term_number
+    fetchGifs(term, number, term_number)
+    .then(gifs => {return gifs.data.map( gifObj => gifObj.id )})
+    .then( gifObjIds => {
+      if (this.state[current_term] !== "") {
+        this.setState( Object.assign({},this.state,{images:{...this.state.images,[number]:gifObjIds}}) )} })
+  }
+
 
   handleBlankTerm(term, number, term_number){
     this.setState( Object.assign({},this.state,{images:{...this.state.images,[number]:["iF3M9gPPCdulq"]}}) )
@@ -122,28 +143,36 @@ class App extends Component {
     this.props.history.push("/show!")
     }
 
-  handleShuffle = (shuffle) => {
+  handleShuffle = (shuffle, term) => {
     var current_shuffle = this.state[shuffle]
-    if (current_shuffle <= 23){
-      this.setState( Object.assign({},this.state,{...this.state,[shuffle]: current_shuffle + 1}) )
-      this.setState({url: ""})
-    } else {
-      current_shuffle = 0
-      this.setState( Object.assign({},this.state,{...this.state,[shuffle]: current_shuffle}) )
-      this.setState({url: ""})
-    }
+    if (term !== "") {
 
+      if (current_shuffle <= 23){
+        this.setState( Object.assign({},this.state,{...this.state,[shuffle]: current_shuffle + 1}) )
+        this.setState({url: ""})
 
+      } else {
+        current_shuffle = 0
+        this.setState( Object.assign({},this.state,{...this.state,[shuffle]: current_shuffle}) )
+        this.setState({url: ""})
+
+      }
+
+    } else { current_shuffle = 0 }
    }
+
+
+
 
   mainPage(){
        return(
       <div>
-      <div id="title">Three Word Fraiser</div>
-        <div id="app-box">
-         <ThreeCardGroup shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} images={this.state.images} onTermChange={this.handleTermChange.bind(this)} onShuffle={this.handleShuffle.bind(this)} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3} blankTerm={this.handleBlankTerm.bind(this)}/>
-         </div>
+      <div id="title"><a title="Three Word Fraiser - Full screen messages with impact">Three Word Fraiser</a></div>
 
+        <div id="app-box">
+         <ThreeCardGroup shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} images={this.state.images} onTermChange={this.handleTermChange.bind(this)} onShuffle={this.handleShuffle.bind(this)} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3} blankTerm={this.handleBlankTerm.bind(this)}
+         initialLoad={this.initialLoad}/>
+         </div>
 
          <Row>
            <div id="controls">

@@ -1,8 +1,12 @@
+import {debounce} from 'throttle-debounce';
+
+
 const baseUrl = 'http://localhost:3000/api/v1/phrases'
 
 
 
 export function fetchGifs(term, number, term_number){
+
   return fetch(`http://api.giphy.com/v1/gifs/search?q=${term}&api_key=dc6zaTOxFJmzC`)
   .then(res => res.json())
   .then(handleNoGifs)
@@ -32,7 +36,6 @@ export function postPhrase(word_1, word_2, word_3){
 }
 
 export function fetchPhrase(hash_token){
-
   return fetch(`http://localhost:3000/api/v1/phrases/${hash_token}`, {
       method: 'GET',
       headers:   {'content-type': 'application/json',
@@ -40,10 +43,6 @@ export function fetchPhrase(hash_token){
                   'token': hash_token
                 }
     }).then(response => response.json() )
-
-
-
-
 }
 
 

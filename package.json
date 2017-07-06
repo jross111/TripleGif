@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
+    "lodash": "^4.17.4",
     "react": "^15.6.1",
     "react-addons-css-transition-group": "^15.6.0",
     "react-addons-transition-group": "^15.6.0",
@@ -11,7 +12,8 @@
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "reactstrap": "^4.6.2",
-    "superagent": "^3.5.2"
+    "superagent": "^3.5.2",
+    "throttle-debounce": "^1.0.1"
   },
   "devDependencies": {
     "react-scripts": "1.0.7"
