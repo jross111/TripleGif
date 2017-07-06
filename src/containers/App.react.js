@@ -61,7 +61,10 @@ class App extends Component {
       this.showPageSaved = this.showPageSaved.bind(this)
       this.handleOptionChange = this.handleOptionChange.bind(this)
       this.handleShuffle = this.handleShuffle.bind(this)
+
   }
+
+
 
   createPhrase(){
     let word_1 = {text:this.state.term_1, gif_id: this.state.images.images_1[this.state.shuffle_1], text_theme: this.state.words[0].text_theme, gif_theme: this.state.words[0].gif_theme}
@@ -136,9 +139,7 @@ class App extends Component {
   mainPage(){
        return(
       <div>
-         <Row>
-         <Col xs="12" md="12" sm="12"> <h1 id="title"> Three Word Fraiser </h1> </Col>
-         </Row>
+      <div id="title">Three Word Fraiser</div>
         <div id="app-box">
          <ThreeCardGroup shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} images={this.state.images} onTermChange={this.handleTermChange.bind(this)} onShuffle={this.handleShuffle.bind(this)} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3} blankTerm={this.handleBlankTerm.bind(this)}/>
          </div>
@@ -147,15 +148,12 @@ class App extends Component {
          <Row>
            <div id="controls">
            <Col xs="12" md="12" sm="12"><div><RadioButtons handleOptionChange={this.handleOptionChange} selectedOption={this.state.selectedOption}/></div>< SavePreview showPreview={this.handlePreview.bind(this)}  createPhrase={this.createPhrase.bind(this)} /><div id="url_field"><UrlField url={this.state.url}/></div>  </Col>
+
            </div>
         </Row>
-
-
         <Row id="footer">
-
-
         <Col xs="4" md="4" sm="4">  </Col>
-        <Col   xs="4" md="4" sm="4"><div id="jonny"><a target="blank" href="http://jonnyxyz.com/">👨‍💻</a></div> </Col>
+        <Col   xs="4" md="4" sm="4"><div id="jonny"><a target="blank" title="Don't just hover there, get in touch: hello@jonnyxyz.com" href="http://jonnyxyz.com/">👨‍💻</a></div> </Col>
         <Col  xs="4" md="4" sm="4"> <div id="giphy"><img src={giphy}/></div></Col>
 
         </Row>
