@@ -162,8 +162,6 @@ class App extends Component {
    }
 
 
-
-
   mainPage(){
        return(
       <div>

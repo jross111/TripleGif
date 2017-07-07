@@ -32,21 +32,21 @@ export default class ShowPageSaved extends React.Component {
       return (
 
     <container id="container">
-      <div id="content">
+      <div id="content" className={this.props.words[0].gif_theme}>
         <div className= "horizontal div3" id={this.props.words[0].gif_theme}>
           <img className="background-image" src={"https://media.giphy.com/media/" + this.props.words[0].gif_id + "/giphy.gif"} alt="Image 1"/>
         </div>
         <h1 className="animated intensifies bounceInUp" id={this.props.words[0].text_theme}>  {this.props.words[0].text} </h1>
       </div>
 
-      <div id="primary">
+      <div id="primary" className={this.props.words[1].gif_theme}>
       <div className="horizontal div3" id={this.props.words[1].gif_theme}>
             <img className="background-image" src={"https://media.giphy.com/media/" + this.props.words[1].gif_id + "/giphy.gif"} alt="Image 2"/>
           </div>
           <h1 className="animated intensifies bounceInDown" id={this.props.words[1].text_theme}>{this.props.words[1].text} </h1>
       </div>
 
-      <div id="secondary">
+      <div id="secondary" className={this.props.words[2].gif_theme}>
       <div className="horizontal div3" id={this.props.words[2].gif_theme}>
           <img className="background-image" src={"https://media.giphy.com/media/" + this.props.words[2].gif_id + "/giphy.gif"} alt="Image 3"/>
         </div>
