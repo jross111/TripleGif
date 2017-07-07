@@ -13,8 +13,6 @@
 
 }
 
-
-
 #content {
     float: left;
     width: 33%;
@@ -87,7 +85,7 @@
    top: 40%;
    left: %;
    width: 33%;
-   color: black;
+   color: red;
    font-family: 'Russo One', sans-serif;
    font-size: 6vw;
    text-align: center;
@@ -102,7 +100,7 @@
    top: 40%;
    left: auto;
    width: 34%;
-   color: black;
+   color: red;
    font-family: 'Russo One', sans-serif;
    font-size: 6vw;
    text-align: center;
@@ -118,7 +116,7 @@
    top: 40%;
    width: 33%;
    left: auto;
-   color: black;
+   color: red;
    font-family: 'Russo One', sans-serif;
    font-size: 6vw;
    text-align: center;
@@ -128,11 +126,16 @@
   0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
 }
 
+
+
+
 #content.gif_1_spicy {
     float: left;
     width: 34%;
     height:100vh;
     background-color: #FF0000;
+    -webkit-filter: saturate(3);
+    filter: saturate(3);
 }
 
 #primary.gif_2_spicy {
@@ -140,6 +143,8 @@
     width: 33%;
     height:100vh;
     background-color: #FF0000;
+    -webkit-filter: saturate(3);
+    filter: saturate(3);
 }
 
 #secondary.gif_3_spicy {
@@ -147,6 +152,8 @@
     width: 33%;
     height:100vh;
     background-color: #FF0000;
+    -webkit-filter: saturate(3);
+    filter: saturate(3);
 }
 
 #text_1_party {
@@ -155,7 +162,7 @@
    top: 40%;
    left: %;
    width: 33%;
-   color: pink;
+   color: #FF69B4;
    font-family: 'Anton', sans-serif;
    font-size: 8vw;
    text-align: center;
@@ -170,7 +177,7 @@
    top: 40%;
    left: auto;
    width: 34%;
-   color: pink;
+   color: #FF69B4;
    font-family: 'Anton', sans-serif;
    font-size: 8vw;
    text-align: center;
@@ -183,7 +190,7 @@
    position: absolute;
    top: 40%;
    width: 33%;
-   color: pink;
+   color: #FF69B4;
    font-family: 'Anton', sans-serif;
    font-size: 8vw;
    text-align: center;
@@ -195,21 +202,25 @@
     float: left;
     width: 34%;
     height:100vh;
-    background-image: url("../assets/images/party-bg.jpg");
+    background-color: #FF69B4;
+
+
 }
 
 #primary.gif_2_party {
     float: left;
     width: 33%;
     height:100vh;
-    background-image: url("../assets/images/party-bg.jpg");
+    background-color: #FF69B4;
+
 }
 
 #secondary.gif_3_party {
     float: left;
     width: 33%;
     height:100vh;
-    background-image: url("../assets/images/party-bg.jpg");
+    background-color: #FF69B4;
+
 }
 
 
@@ -236,35 +247,35 @@ div.div3 {
 div.div3#gif_1_spicy {
     width: 100%;
     height: 100%;
-    opacity:0.5;
+    opacity:0.8;
 }
 div.div3#gif_2_spicy {
     width: 100%;
     height: 100%;
-    opacity:0.5;
+    opacity:0.8;
 }
 
 div.div3#gif_3_spicy {
     width: 100%;
     height: 100%;
-    opacity:0.5;
+    opacity:0.8;
 }
 
 div.div3#gif_1_party {
     width: 100%;
     height: 100%;
-    opacity:0.5;
+    opacity:0.8;
 }
 div.div3#gif_2_party {
     width: 100%;
     height: 100%;
-    opacity:0.5;
+    opacity:0.8;
 }
 
 div.div3#gif_3_party {
     width: 100%;
     height: 100%;
-    opacity:0.5;
+    opacity:0.8;
 }
 
 #watermark

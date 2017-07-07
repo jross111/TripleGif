@@ -1,13 +1,14 @@
 import {debounce} from 'throttle-debounce';
 
 
-const baseUrl = 'http://localhost:3000/api/v1/phrases'
+const devUrl = 'http://localhost:3000/api/v1/phrases'
+const prodUrl = 'https://twf-back.herokuapp.com/api/v1/phrases'
 
 
 
 export function fetchGifs(term, number, term_number){
 
-  return fetch(`http://api.giphy.com/v1/gifs/search?q=${term}&api_key=dc6zaTOxFJmzC`)
+  return fetch(`https://api.giphy.com/v1/gifs/search?q=${term}&api_key=dc6zaTOxFJmzC`)
   .then(res => res.json())
   .then(handleNoGifs)
 
@@ -16,7 +17,7 @@ export function fetchGifs(term, number, term_number){
 
 export function postPhrase(word_1, word_2, word_3){
 
-  return fetch(`http://localhost:3000/api/v1/phrases`, {
+  return fetch(`${prodUrl}`, {
       method: 'POST',
       headers: headers(),
       body: JSON.stringify({
@@ -36,7 +37,7 @@ export function postPhrase(word_1, word_2, word_3){
 }
 
 export function fetchPhrase(hash_token){
-  return fetch(`http://localhost:3000/api/v1/phrases/${hash_token}`, {
+  return fetch(`${prodUrl}` + `${hash_token}`, {
       method: 'GET',
       headers:   {'content-type': 'application/json',
                   'accept': 'application/json',
