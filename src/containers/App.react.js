@@ -165,7 +165,7 @@ class App extends Component {
   mainPage(){
        return(
       <div>
-      <div id="title"><a title="Three Word Fraiser - Full screen messages with impact">Three Word Fraiser</a></div>
+      <div id="title"><a title="A vital communication tool in a time of chaos">Three Word Fraiser</a></div>
 
         <div id="app-box">
          <ThreeCardGroup shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} images={this.state.images} onTermChange={this.handleTermChange.bind(this)} onShuffle={this.handleShuffle.bind(this)} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3} blankTerm={this.handleBlankTerm.bind(this)}

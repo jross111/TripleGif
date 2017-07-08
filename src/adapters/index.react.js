@@ -8,16 +8,15 @@ const prodUrl = 'https://twf-back.herokuapp.com/api/v1/phrases'
 
 export function fetchGifs(term, number, term_number){
 
-  return fetch(`https://api.giphy.com/v1/gifs/search?q=${term}&api_key=dc6zaTOxFJmzC`)
+  return fetch(`https://api.giphy.com/v1/gifs/search?q=${term}&api_key=2e52230b07cc48e6beca3290e5faa77a`)
   .then(res => res.json())
   .then(handleNoGifs)
-
 
 }
 
 export function postPhrase(word_1, word_2, word_3){
 
-  return fetch(`${prodUrl}`, {
+  return fetch(`${devUrl}`, {
       method: 'POST',
       headers: headers(),
       body: JSON.stringify({
@@ -37,7 +36,7 @@ export function postPhrase(word_1, word_2, word_3){
 }
 
 export function fetchPhrase(hash_token){
-  return fetch(`${prodUrl}/` + `${hash_token}`, {
+  return fetch(`${devUrl}/` + `${hash_token}`, {
       method: 'GET',
       headers:   {'content-type': 'application/json',
                   'accept': 'application/json',
