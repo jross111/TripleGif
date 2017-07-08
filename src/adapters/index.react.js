@@ -1,22 +1,21 @@
 import {debounce} from 'throttle-debounce';
 
 
-const devUrl = 'http://localhost:3000/api/v1/phrases'
-const prodUrl = 'https://twf-back.herokuapp.com/api/v1/phrases'
+const devUrl = 'http://localhost:3000/api/v1/'
+const prodUrl = 'https://twf-back.herokuapp.com/api/v1/'
 
 
 
 export function fetchGifs(term, number, term_number){
 
-  return fetch(`https://api.giphy.com/v1/gifs/search?q=${term}&api_key=2e52230b07cc48e6beca3290e5faa77a`)
+  return fetch(`${devUrl}searches/${term}`)
   .then(res => res.json())
-  .then(handleNoGifs)
 
 }
 
 export function postPhrase(word_1, word_2, word_3){
 
-  return fetch(`${devUrl}`, {
+  return fetch(`${devUrl}phrases`, {
       method: 'POST',
       headers: headers(),
       body: JSON.stringify({
@@ -36,7 +35,7 @@ export function postPhrase(word_1, word_2, word_3){
 }
 
 export function fetchPhrase(hash_token){
-  return fetch(`${devUrl}/` + `${hash_token}`, {
+  return fetch(`${devUrl}phrases/` + `${hash_token}`, {
       method: 'GET',
       headers:   {'content-type': 'application/json',
                   'accept': 'application/json',
@@ -44,48 +43,6 @@ export function fetchPhrase(hash_token){
                 }
     }).then(response => response.json() )
 }
-
-
-function handleNoGifs(response) {
-
-    if (response.data.length < 1) {
-
-        response.data = [
-          {id: "3ohzdYt5HYinIx13ji"},
-          {id: "26FPKsfr1V9Yw4eru"},
-          {id: "xTiTnIc6PO7tUWcq6A"},
-          {id: "oe33xf3B50fsc"},
-          {id: "VpmPTHI4ZwTm0"},
-          {id: "FLo2RkzqiukkE"},
-          {id: "QGzPdYCcBbbZm"},
-          {id: "QzqXexkCcb0Zi"},
-          {id: "3oGRFlFN8w1ARq97ji"},
-          {id: "djeEV9ttVKWKfvLCw3C"},
-          {id: "3ohze1eJu9ir7isDOE"},
-          {id: "3oKIPpHDWIuw3BIoW4"},
-          {id: "PvyOQKzATkEdG"},
-          {id: "cRwkBGqJaQunm"},
-          {id: "13mHK22oGcYsJa"},
-          {id: "xT1XGyUR9PSfwfUeAw"},
-          {id: "xT1XGUVLI4qcZl8LZe"},
-          {id: "xUA7b2S7SxhM1cGdsQ"},
-          {id: "l4FGAPIreAB99uMLu"},
-          {id: "3o6Zt05B3aZGi6pLVu"},
-          {id: "AEsUINFBsRVN6"},
-          {id: "qgkv7fBPGLOb6"},
-          {id: "RpIXT68Tc2FPO"},
-          {id: "y2x1uWlpyOioU"},
-          {id: "1qm2GETIhzRAY"}
-        ]
-
-    }
-
-    return response;
-
-}
-
-
-
 
 
 function headers(){

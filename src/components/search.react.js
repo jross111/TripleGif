@@ -1,5 +1,7 @@
 import React from 'react';
-import { Button, Form, FormGroup, Label, InputGroup, InputGroupButton, Input  } from 'reactstrap';
+import { Button, Form, FormGroup, Label, InputGroup, InputGroupButton, Input} from 'reactstrap';
+import '../styles/three_card_group.css';
+
 
 
 export default class Search extends React.Component {
@@ -23,12 +25,13 @@ export default class Search extends React.Component {
 
 
   render() {
+    const btn ={backgroundColor: '#23C8DE', border: 0};
     return (
-<Form onSubmit={e => e.preventDefault()}>
-  <FormGroup>
+<Form  onSubmit={e => e.preventDefault()}>
+  <FormGroup >
     <InputGroup>
         <Input tabIndex = "1"   onChange={event => this.onInputChange(event.target.value)} size="lg" type="search" name="search" id="exampleSearch" placeholder="search placeholder" value={this.props.term} />
-
+        <InputGroupButton onClick={() => this.props.onShuffle(this.props.shuffle_number, this.props.term)} color="primary" style={btn} size="lg">Shuffle</InputGroupButton>
       </InputGroup>
   </FormGroup>
 </Form>

@@ -3,3 +3,18 @@ position:absolute;
   bottom:0;
   width:100%;
 }
+
+.card_image {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+div.form-group {
+  margin-bottom: 0px;
+}
+
+div.card-block {
+  margin-bottom: 0;
+}
