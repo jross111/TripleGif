@@ -18,3 +18,7 @@ div.form-group {
 div.card-block {
   margin-bottom: 0;
 }
+
+div.card {
+  background-color: #eceeef;
+}

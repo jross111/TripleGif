@@ -30,7 +30,7 @@ export default class Search extends React.Component {
 <Form  onSubmit={e => e.preventDefault()}>
   <FormGroup >
     <InputGroup>
-        <Input tabIndex = "1"   onChange={event => this.onInputChange(event.target.value)} size="lg" type="search" name="search" id="exampleSearch" placeholder="search placeholder" value={this.props.term} />
+        <Input tabIndex = "1"   onChange={event => this.onInputChange(event.target.value)} size="lg" type="search" name="search" id="exampleSearch" placeholder="type something..." value={this.props.term} />
         <InputGroupButton onClick={() => this.props.onShuffle(this.props.shuffle_number, this.props.term)} color="primary" style={btn} size="lg">Shuffle</InputGroupButton>
       </InputGroup>
   </FormGroup>

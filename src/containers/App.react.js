@@ -68,7 +68,6 @@ class App extends Component {
   }
 
 
-
   createPhrase(){
     let word_1 = {text:this.state.term_1, gif_id: this.state.images.images_1[this.state.shuffle_1], text_theme: this.state.words[0].text_theme, gif_theme: this.state.words[0].gif_theme}
     let word_2 = {text:this.state.term_2, gif_id: this.state.images.images_2[this.state.shuffle_2], text_theme: this.state.words[1].text_theme, gif_theme: this.state.words[1].gif_theme}
@@ -114,7 +113,6 @@ class App extends Component {
 
   }
 
-
   handleTermChange(term, number, term_number, shuffle_num) {
     this.setState({[term_number]: term})
     this.setState({[shuffle_num]: 0})
@@ -131,22 +129,24 @@ class App extends Component {
         this.setState( Object.assign({},this.state,{images:{...this.state.images,[number]:gifObjIds}}) )} })
   }
 
-
   handleBlankTerm(term, number, term_number){
     this.setState( Object.assign({},this.state,{images:{...this.state.images,[number]:["iF3M9gPPCdulq"]}}) )
     this.setState({[term_number]: term})
   }
-
 
   handlePreview = () => {
     this.props.history.push("/show!")
     }
 
   handleShuffle = (shuffle, term) => {
+    var number = `images_`+`${shuffle.slice(8)}`
+    var imagesObject = this.state.images
+    var selectedImagesArrayCountMinusTwo = (imagesObject[`${number}`].length)-2
     var current_shuffle = this.state[shuffle]
+
     if (term !== "") {
 
-      if (current_shuffle <= 23){
+      if (current_shuffle <= selectedImagesArrayCountMinusTwo){
         this.setState( Object.assign({},this.state,{...this.state,[shuffle]: current_shuffle + 1}) )
         this.setState({url: ""})
 
