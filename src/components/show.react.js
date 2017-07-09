@@ -19,8 +19,10 @@ export default class ShowPage extends React.Component {
   render(props) {
     return (
 
-  <container id="container">
+<div>
 
+  <container id="container">
+  <div className="box"><b></b>
     <div id="content" className={this.props.words[0].gif_theme}>
 
       <div className= "horizontal div3" id={this.props.words[0].gif_theme}>
@@ -46,7 +48,11 @@ export default class ShowPage extends React.Component {
 
     </div>
     <img id="watermark" src={giphy}/>
+      </div>
   </container>
+
+</div>
+
     );
   }
 
