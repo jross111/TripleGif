@@ -3,7 +3,6 @@ import '../styles/show.css';
 import '../styles/obnoxious.css';
 import '../styles/animate.css';
 import giphy from '../assets/images/giphy.png'
-import loaderLogo from '../assets/images/twf-loader.png'
 
 
 export default class ShowPageSaved extends React.Component {
@@ -12,8 +11,6 @@ export default class ShowPageSaved extends React.Component {
   componentDidMount() {
     var url_bar = this._reactInternalInstance._context.router.route.location.pathname.slice(1)
     var url_token = this._reactInternalInstance._context.router.route.location.pathname.slice(6)
-    console.log(url_bar)
-    console.log(url_token)
      if ( url_bar !== "show" ) {
     this.props.fetchPhrase(url_token)
 
@@ -26,7 +23,7 @@ export default class ShowPageSaved extends React.Component {
 
 
   render(props) {
-    console.log(props)
+
 
     if (this.props.words[2].gif_id) {
       return (
@@ -52,12 +49,13 @@ export default class ShowPageSaved extends React.Component {
         </div>
         <h1 className="animated intensifies bounceInRight" id={this.props.words[2].text_theme}> {this.props.words[2].text} </h1>
       </div>
+      <div className={this.props.words[0].gif_theme}><b></b></div>
       <img id="watermark" src={giphy}/>
     </container>
       );
     }
     else {
-      return <div><img id="loading" src={loaderLogo}/><h1 id="loadingText">Three Word Fraiser</h1><p id="loadingText">Loading a phrase for you...</p></div>
+      return <div><h1 id="loadingText">Three Word Fraiser</h1><p id="loadingText">Loading a phrase for you...</p></div>
     }
   }
 
