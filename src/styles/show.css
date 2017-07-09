@@ -299,24 +299,51 @@ text-align: center;
 
 }
 
-.box {
-  margin: 0 auto;
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  box-shadow: inset 0 0 3px #000;
-  border-radius: 5px;
-  border: 1px solid #111;
+.gif_1_party {
+
+
+
+  position: inherit;
+
+background-image: url("https://media.giphy.com/media/10Bb1Bq7BMi9Co/giphy.gif");
+background-repeat: repeat;
+
   overflow: hidden;
 }
-.box b {
-  display: block;
-  z-index:99;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #3673cf;
-  box-shadow: inset -5px -5px 5px rgba(0,0,0,.6), 15px 15px 2px rgba(0,0,0,.04);
+
+.gif_2_party {
+
+
+
+  position: inherit;
+
+background-image: url("https://media.giphy.com/media/fi63fVTWztS7K/giphy.gif");
+
+
+  overflow: hidden;
+}
+
+.gif_3_party {
+
+
+
+  position: inherit;
+
+background-image: url("https://media.giphy.com/media/10Bb1Bq7BMi9Co/giphy.gif");
+background-repeat: repeat-x;
+
+  overflow: hidden;
+}
+.gif_1_party  b {
+
+
+  width: 478px;
+  height: 480px;
+  border-radius: 0%;
+  background-image: url("https://media.giphy.com/media/GxJTMUK5umX8k/giphy.gif");
+  zoom: 0.74;
+
+
   position: absolute;
   -webkit-animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
   -moz-animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
@@ -325,26 +352,26 @@ text-align: center;
 }
 
 @-webkit-keyframes moveX {
-  from { left: 0; } to { left: 480px; }
+  from { left: 0; } to { left: 99vw; }
 }
 @-moz-keyframes moveX {
-  from { left: 0; } to { left: 480px; }
+  from { left: 0; } to { left: 99vw; }
 }
 @-o-keyframes moveX {
-  from { left: 0; } to { left: 480px; }
+  from { left: 0; } to { left: 99vw; }
 }
 @keyframes moveX {
-  from { left: 0; } to { left: 480px; }
+  from { left: 0; } to { left: 99vw; }
 }
 @-webkit-keyframes moveY {
-  from { top: 0; } to { top: 280px; }
+  from { top: 0; } to { top: 99vh; }
 }
 @-moz-keyframes moveY {
-  from { top: 0; } to { top: 280px; }
+  from { top: 0; } to { top: 99vh; }
 }
 @-o-keyframes moveY {
-  from { top: 0; } to { top: 280px; }
+  from { top: 0; } to { top: 99vh; }
 }
 @keyframes moveY {
-  from { top: 0; } to { top: 280px; }
+  from { top: 0; } to { top: 99vh; }
 }

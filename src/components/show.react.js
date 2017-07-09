@@ -19,10 +19,10 @@ export default class ShowPage extends React.Component {
   render(props) {
     return (
 
-<div>
+
 
   <container id="container">
-  <div className="box"><b></b>
+
     <div id="content" className={this.props.words[0].gif_theme}>
 
       <div className= "horizontal div3" id={this.props.words[0].gif_theme}>
@@ -47,11 +47,12 @@ export default class ShowPage extends React.Component {
       <h1 className="animated intensifies bounceInRight" id={this.props.words[2].text_theme}> {this.props.term_3} </h1>
 
     </div>
+    <div className={this.props.words[0].gif_theme}><b></b></div>
     <img id="watermark" src={giphy}/>
-      </div>
+
   </container>
 
-</div>
+
 
     );
   }
