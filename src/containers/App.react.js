@@ -166,18 +166,19 @@ class App extends Component {
       <div>
       <div id="title"><a title="Three Word Fraiser - Full screen messages with impact">Three Word Fraiser</a></div>
 
-        <div id="app-box">
+      <div id="app-box">
          <ThreeCardGroup shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} images={this.state.images} onTermChange={this.handleTermChange.bind(this)} onShuffle={this.handleShuffle.bind(this)} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3} blankTerm={this.handleBlankTerm.bind(this)}
          initialLoad={this.initialLoad}/>
          </div>
 
 
+
          <Row>
            <div id="controls">
-           <Col xs="12" md="12" sm="12"><div><RadioButtons handleOptionChange={this.handleOptionChange} selectedOption={this.state.selectedOption}/></div>< SavePreview showPreview={this.handlePreview.bind(this)}  createPhrase={this.createPhrase.bind(this)} /><div id="url_field"><UrlField url={this.state.url}/></div>  </Col>
-
+           <div><RadioButtons handleOptionChange={this.handleOptionChange} selectedOption={this.state.selectedOption}/></div>< SavePreview showPreview={this.handlePreview.bind(this)}  createPhrase={this.createPhrase.bind(this)} /><div id="url_field"><UrlField url={this.state.url}/></div>
            </div>
         </Row>
+        
         <Row id="footer">
         <Col xs="4" md="4" sm="4">  </Col>
         <Col   xs="4" md="4" sm="4"><div id="jonny"><a target="blank" title="Don't just hover there, get in touch: hello@jonnyxyz.com" href="http://jonnyxyz.com/">👨‍💻</a></div> </Col>
