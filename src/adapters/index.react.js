@@ -8,6 +8,12 @@ const prodUrl = 'https://twf-back.herokuapp.com/api/v1/'
 
 export function fetchGifs(term, number, term_number){
 
+  var http = require("http");
+  setInterval(function() {
+    http.get("https://twftime.com/");
+    console.log("stay awake")
+  }, 300000); // every 5 minutes (300000)
+
   return fetch(`${prodUrl}searches/${term}`)
   .then(res => res.json())
 
