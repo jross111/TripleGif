@@ -17,8 +17,17 @@ div.form-group {
 
 div.card-block {
   margin-bottom: 0;
+  outline: 0;
 }
 
 div.card {
+  margin-bottom: 0;
   background-color: #eceeef;
+  border: 0px;
+  padding-top: 10px;
+}
+
+.card-group {
+    padding-right: 0px;
+    padding-left: 0px;
 }
