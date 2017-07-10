@@ -11,6 +11,7 @@
     height:100vh;
 
 
+
 }
 
 #content {
@@ -126,9 +127,6 @@
   0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
 }
 
-
-
-
 #content.gif_1_spicy {
     float: left;
     width: 34%;
@@ -157,10 +155,13 @@
 }
 
 #text_1_party {
-  animation: blinker 0.2s linear infinite;
-   position: absolute;
-   top: 40%;
-   left: %;
+    animation: blinker 0.2s linear infinite;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+   vertical-align: middle;
+   display: inline-block;
+   left: auto;
    width: 33%;
    color: #FF69B4;
    font-family: 'Anton', sans-serif;
@@ -173,8 +174,10 @@
 
 #text_2_party {
   animation: blinker 0.2s linear infinite;
-   position: absolute;
-   top: 40%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
    left: auto;
    width: 34%;
    color: #FF69B4;
@@ -187,8 +190,9 @@
 
 #text_3_party {
     animation: blinker 0.2s linear infinite;
-   position: absolute;
-   top: 40%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
    width: 33%;
    color: #FF69B4;
    font-family: 'Anton', sans-serif;
@@ -198,13 +202,12 @@
    text-transform: uppercase;
 }
 
+
 #content.gif_1_party {
     float: left;
     width: 34%;
     height:100vh;
     background-color: #FF69B4;
-
-
 }
 
 #primary.gif_2_party {
@@ -212,7 +215,6 @@
     width: 33%;
     height:100vh;
     background-color: #FF69B4;
-
 }
 
 #secondary.gif_3_party {
@@ -300,14 +302,9 @@ text-align: center;
 }
 
 .gif_1_party {
-
-
-
   position: inherit;
-
-background-image: url("https://media.giphy.com/media/10Bb1Bq7BMi9Co/giphy.gif");
-background-repeat: repeat;
-
+  background-image: url("https://media.giphy.com/media/10Bb1Bq7BMi9Co/giphy.gif");
+  background-repeat: repeat;
   overflow: hidden;
 }
 
@@ -352,26 +349,26 @@ background-repeat: repeat-x;
 }
 
 @-webkit-keyframes moveX {
-  from { left: 0; } to { left: 99vw; }
+  from { left: 0; } to { left: 90vw;; }
 }
 @-moz-keyframes moveX {
-  from { left: 0; } to { left: 99vw; }
+  from { left: 0; } to { left: 90vw;; }
 }
 @-o-keyframes moveX {
-  from { left: 0; } to { left: 99vw; }
+  from { left: 0; } to { left: 90vw;; }
 }
 @keyframes moveX {
-  from { left: 0; } to { left: 99vw; }
+  from { left: 0; } to { left: 90vw;; }
 }
 @-webkit-keyframes moveY {
-  from { top: 0; } to { top: 99vh; }
+  from { top: 0; } to { top: 70vh; }
 }
 @-moz-keyframes moveY {
-  from { top: 0; } to { top: 99vh; }
+  from { top: 0; } to { top: 70vh; }
 }
 @-o-keyframes moveY {
-  from { top: 0; } to { top: 99vh; }
+  from { top: 0; } to { top: 70vh; }
 }
 @keyframes moveY {
-  from { top: 0; } to { top: 99vh; }
+  from { top: 0; } to { top: 70vh; }
 }

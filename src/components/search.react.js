@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, FormGroup, Label, InputGroup, InputGroupButton, Input} from 'reactstrap';
+import { Form, FormGroup, InputGroup, InputGroupButton, Input} from 'reactstrap';
 import '../styles/three_card_group.css';
 
 

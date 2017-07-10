@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
-import { Container, Row, Col, CardDeck} from 'reactstrap';
-import {Switch, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router'
+import { Container, Row, Col} from 'reactstrap';
+import {Route} from 'react-router'
 import {BrowserRouter as Router} from 'react-router-dom'
 import {debounce} from 'throttle-debounce';
 
 
 
-import BoilerPlate from '../components/boilerplate.react.js'
+
 import SavePreview from '../components/save_preview.react.js'
-import Search from '../components/search.react.js'
 import UrlField from '../components/url_field.react.js'
 import ThreeCardGroup from "../components/three_card_group.react.js"
 import ShowPage from "../components/show.react.js"
@@ -73,7 +72,7 @@ class App extends Component {
     let word_2 = {text:this.state.term_2, gif_id: this.state.images.images_2[this.state.shuffle_2], text_theme: this.state.words[1].text_theme, gif_theme: this.state.words[1].gif_theme}
     let word_3 = {text:this.state.term_3, gif_id: this.state.images.images_3[this.state.shuffle_3], text_theme: this.state.words[2].text_theme, gif_theme: this.state.words[2].gif_theme}
     postPhrase(word_1, word_2, word_3)
-    .then(response => this.setState({url: `https://twftime.com/show/` + `${response.hash_token}`}))
+    .then(response => this.setState({url: `https://twftime.com/show/${response.hash_token}`}))
   }
 
   handlePhraseFetch(url_token){
@@ -88,16 +87,16 @@ class App extends Component {
       words:
        [
         {
-          text_theme: `text_1_` + `${theme}`,
-          gif_theme: `gif_1_`+ `${theme}`
+          text_theme: `text_1_${theme}`,
+          gif_theme: `gif_1_${theme}`
         },
         {
-          text_theme: `text_2_` + `${theme}`,
-          gif_theme: `gif_2_`+ `${theme}`
+          text_theme: `text_2_${theme}`,
+          gif_theme: `gif_2_${theme}`
         },
         {
-          text_theme: `text_3_` + `${theme}`,
-          gif_theme: `gif_3_`+ `${theme}`
+          text_theme: `text_3_${theme}`,
+          gif_theme: `gif_3_${theme}`
         }
       ]
     })
@@ -139,7 +138,7 @@ class App extends Component {
     }
 
   handleShuffle = (shuffle, term) => {
-    var number = `images_`+`${shuffle.slice(8)}`
+    var number = `images_${shuffle.slice(8)}`
     var imagesObject = this.state.images
     var selectedImagesArrayCountMinusTwo = (imagesObject[`${number}`].length)-2
     var current_shuffle = this.state[shuffle]
@@ -154,9 +153,7 @@ class App extends Component {
         current_shuffle = 0
         this.setState( Object.assign({},this.state,{...this.state,[shuffle]: current_shuffle}) )
         this.setState({url: ""})
-
       }
-
     } else { current_shuffle = 0 }
    }
 
@@ -164,7 +161,7 @@ class App extends Component {
   mainPage(){
        return(
       <div>
-      <div id="title"><a title="Three Word Fraiser - Full screen messages with impact">Three Word Fraiser</a></div>
+      <div id="title">Three Word Fraiser</div>
 
       <div id="app-box">
          <ThreeCardGroup shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} images={this.state.images} onTermChange={this.handleTermChange.bind(this)} onShuffle={this.handleShuffle.bind(this)} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3} blankTerm={this.handleBlankTerm.bind(this)}
@@ -178,11 +175,11 @@ class App extends Component {
            <div><RadioButtons handleOptionChange={this.handleOptionChange} selectedOption={this.state.selectedOption}/></div>< SavePreview showPreview={this.handlePreview.bind(this)}  createPhrase={this.createPhrase.bind(this)} /><div id="url_field"><UrlField url={this.state.url}/></div>
            </div>
         </Row>
-        
+
         <Row id="footer">
         <Col xs="4" md="4" sm="4">  </Col>
-        <Col   xs="4" md="4" sm="4"><div id="jonny"><a target="blank" title="Don't just hover there, get in touch: hello@jonnyxyz.com" href="http://jonnyxyz.com/">👨‍💻</a></div> </Col>
-        <Col  xs="4" md="4" sm="4"> <div id="giphy"><img src={giphy}/></div></Col>
+        <Col   xs="4" md="4" sm="4"><div id="jonny"><a target="blank" title="Don't just hover there, get in touch: hello@jonnyxyz.com" href="http://jonnyxyz.com/"><span role="img" aria-label="Close">👨‍💻</span></a></div> </Col>
+        <Col  xs="4" md="4" sm="4"> <div id="giphy"><img src={giphy} alt="giphy logo"/></div></Col>
 
         </Row>
 

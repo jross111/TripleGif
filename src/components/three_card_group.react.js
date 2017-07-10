@@ -1,12 +1,10 @@
 import React from 'react';
-import { Card, Button, CardImg, CardTitle, CardText, CardDeck,
- CardSubtitle, CardBlock, CardGroup, CardFooter, Col, Row } from 'reactstrap';
+import { Card, CardImg, CardGroup, Col} from 'reactstrap';
  import Search from './search.react.js'
  import '../styles/three_card_group.css';
 
 
 const ThreeCardGroup = (props) => {
-  const btn ={backgroundColor: '#23C8DE', border: 0};
   return (
 
 

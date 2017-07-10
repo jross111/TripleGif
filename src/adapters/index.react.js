@@ -1,7 +1,5 @@
-import {debounce} from 'throttle-debounce';
 
 
-const devUrl = 'http://localhost:3000/api/v1/'
 const prodUrl = 'https://twf-back.herokuapp.com/api/v1/'
 
 
@@ -41,7 +39,7 @@ export function postPhrase(word_1, word_2, word_3){
 }
 
 export function fetchPhrase(hash_token){
-  return fetch(`${prodUrl}phrases/` + `${hash_token}`, {
+  return fetch(`${prodUrl}phrases/${hash_token}`, {
       method: 'GET',
       headers:   {'content-type': 'application/json',
                   'accept': 'application/json',

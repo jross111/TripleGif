@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Alert, Popover, PopoverTitle, PopoverContent } from 'reactstrap';
+import { Form, Input, Popover, PopoverTitle } from 'reactstrap';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
 export default class UrlField extends React.Component {
@@ -33,7 +33,7 @@ export default class UrlField extends React.Component {
              </CopyToClipboard>
              {this.state.copied ?
                <Popover isOpen={this.state.visible} target="url" toggle={this.onDismiss}>
-                    <PopoverTitle >Copied to Clipboard 📋</PopoverTitle>
+                    <PopoverTitle >Copied to Clipboard<span  role="img" aria-label="Copied"> 📋 </span></PopoverTitle>
                 </Popover>
                 : <Popover isOpen={this.state.visible} target="url" toggle={this.onDismiss}>
                   <PopoverTitle >Press "Save" first</PopoverTitle>
