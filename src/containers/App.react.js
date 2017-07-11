@@ -64,6 +64,7 @@ class App extends Component {
       this.handleShuffle = this.handleShuffle.bind(this)
       this.triggerFetchGifs = debounce(200, this.triggerFetchGifs.bind(this))
       this.initialLoad = this.initialLoad.bind(this)
+
   }
 
 
@@ -178,7 +179,7 @@ class App extends Component {
 
         <Row id="footer">
         <Col xs="4" md="4" sm="4">  </Col>
-        <Col   xs="4" md="4" sm="4"><div id="jonny"><a target="blank" title="Don't just hover there, get in touch: hello@jonnyxyz.com" href="http://jonnyxyz.com/"><span role="img" aria-label="Close">👨‍💻</span></a></div> </Col>
+        <Col   xs="4" md="4" sm="4"><div id="jonny"><a target="blank" title="Don't just hover there, get in touch: hello@jonnyxyz.com" href="http://jonnyxyz.com/"><span role="img" aria-label="Jonny">👨‍💻</span></a></div> </Col>
         <Col  xs="4" md="4" sm="4"> <div id="giphy"><img src={giphy} alt="giphy logo"/></div></Col>
 
         </Row>
