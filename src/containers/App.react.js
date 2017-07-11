@@ -26,9 +26,9 @@ class App extends Component {
     super()
       this.state = {
       images:{
-        images_1: ["26AHIbtfGWCi2Q2C4"],
-        images_2: ["3oKIPAGZzx2PY1wYjC"],
-        images_3: ["iNJmdpZ8gp5sI"]
+        images_1: ["3og0IAkPaKIVvuDdQI"],
+        images_2: ["xUA7aRv5GihHamyYEg"],
+        images_3: ["xUA7baVORU1IvR58S4"]
       },
 
       words:
@@ -50,9 +50,9 @@ class App extends Component {
       shuffle_1: 0,
       shuffle_2: 0,
       shuffle_3: 0,
-      term_1: "three",
-      term_2: "word",
-      term_3: "fraiser",
+      term_1: "",
+      term_2: "",
+      term_3: "",
       url: "",
       selectedOption: "vanilla"
 
@@ -64,7 +64,6 @@ class App extends Component {
       this.handleShuffle = this.handleShuffle.bind(this)
       this.triggerFetchGifs = debounce(200, this.triggerFetchGifs.bind(this))
       this.initialLoad = this.initialLoad.bind(this)
-
   }
 
 

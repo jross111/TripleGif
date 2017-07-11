@@ -19,9 +19,7 @@ export default class Search extends React.Component {
     }
   }
 
-  componentDidMount(){
-      this.props.initialLoad(this.props.term, this.props.number, this.props.term_number);
-  }
+
 
 
   render() {
