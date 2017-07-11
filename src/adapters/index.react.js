@@ -5,7 +5,6 @@ const prodUrl = 'https://twf-back.herokuapp.com/api/v1/'
 
 
 export function fetchGifs(term, number, term_number){
-
   var http = require("http");
   setInterval(function() {
   http.get("https://twftime.com/");

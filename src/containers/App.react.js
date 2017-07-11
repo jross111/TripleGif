@@ -4,9 +4,7 @@ import { Container, Row, Col} from 'reactstrap';
 import {Route} from 'react-router'
 import {BrowserRouter as Router} from 'react-router-dom'
 import {debounce} from 'throttle-debounce';
-
-
-
+import {Link} from 'react-router-dom'
 
 import SavePreview from '../components/save_preview.react.js'
 import UrlField from '../components/url_field.react.js'
@@ -161,15 +159,12 @@ class App extends Component {
   mainPage(){
        return(
       <div>
-      <div id="title">Three Word Fraiser</div>
+      <Link to="/" onClick={window.location.reload} style={{textDecoration: "none"}}><div id="title">Three Word Fraiser</div></Link>
 
       <div id="app-box">
          <ThreeCardGroup shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} images={this.state.images} onTermChange={this.handleTermChange.bind(this)} onShuffle={this.handleShuffle.bind(this)} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3} blankTerm={this.handleBlankTerm.bind(this)}
          initialLoad={this.initialLoad}/>
          </div>
-
-
-
          <Row>
            <div id="controls">
            <div><RadioButtons handleOptionChange={this.handleOptionChange} selectedOption={this.state.selectedOption}/></div>< SavePreview showPreview={this.handlePreview.bind(this)}  createPhrase={this.createPhrase.bind(this)} /><div id="url_field"><UrlField url={this.state.url}/></div>

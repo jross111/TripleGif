@@ -33,11 +33,9 @@ export default class UrlField extends React.Component {
              </CopyToClipboard>
              {this.state.copied ?
                <Popover isOpen={this.state.visible} target="url" toggle={this.onDismiss}>
-                    <PopoverTitle >Copied to Clipboard<span  role="img" aria-label="Copied"> 📋 </span></PopoverTitle>
+                    <PopoverTitle >Copied to Clipboard<span  role="img" aria-label="Copied"> ✅</span></PopoverTitle>
                 </Popover>
-                : <Popover isOpen={this.state.visible} target="url" toggle={this.onDismiss}>
-                  <PopoverTitle >Press "Save" first</PopoverTitle>
-              </Popover>}
+                : null}
            </Form>
     );
   }
