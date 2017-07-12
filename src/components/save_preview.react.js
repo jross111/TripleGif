@@ -3,8 +3,8 @@ import { Button } from 'reactstrap';
 import '../styles/radio.css';
 
 const SavePreview = (props) => {
-  const btn_yellow ={backgroundColor: '#FFDA40', border: 0, width: "50%" };
-  const btn_pink ={backgroundColor: '#EA4C89', border: 0, width: "50%"};
+  const btn_yellow ={backgroundColor: '#FFDA40', border: 0, width: "49%", marginRight: "2%" };
+  const btn_pink ={backgroundColor: '#EA4C89', border: 0, width: "49%"};
   return (
 
     <div>

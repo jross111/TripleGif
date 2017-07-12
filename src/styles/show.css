@@ -3,6 +3,9 @@
     width: 100%;
     margin: 0 auto;
 
+
+
+
 }
 
 #primary {
@@ -26,10 +29,6 @@
     width: 33%;
     height:100vh;
 
-}
-
-#footer {
-    clear: boh;
 }
 
 #title {
@@ -286,6 +285,28 @@ div.div3#gif_3_party {
        bottom:4px;
        right:3px;
        zoom: 0.8;
+       z-index: 99;
+}
+
+#preview_mode
+{
+position:absolute;
+  width: 100%;
+ top:0px;
+ background-color: rgba(255,0,255,0.8);
+ padding: 10px;
+ line-height: 10px;
+ padding-right: 20px;
+ z-index: 98;
+ display: block;
+}
+
+#preview_mode_text {
+  color: white;
+}
+
+#back_button {
+  margin-right: 10px;
 }
 
 #loading {
@@ -309,14 +330,8 @@ text-align: center;
 }
 
 .gif_2_party {
-
-
-
   position: inherit;
-
-background-image: url("https://media.giphy.com/media/fi63fVTWztS7K/giphy.gif");
-
-
+  background-image: url("https://media.giphy.com/media/fi63fVTWztS7K/giphy.gif");
   overflow: hidden;
 }
 

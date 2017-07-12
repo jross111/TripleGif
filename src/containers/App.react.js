@@ -62,6 +62,7 @@ class App extends Component {
       this.handleShuffle = this.handleShuffle.bind(this)
       this.triggerFetchGifs = debounce(200, this.triggerFetchGifs.bind(this))
       this.initialLoad = this.initialLoad.bind(this)
+
   }
 
 
@@ -135,6 +136,7 @@ class App extends Component {
     this.props.history.push("/show!")
     }
 
+
   handleShuffle = (shuffle, term) => {
     var number = `images_${shuffle.slice(8)}`
     var imagesObject = this.state.images
@@ -165,10 +167,11 @@ class App extends Component {
          <ThreeCardGroup shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} images={this.state.images} onTermChange={this.handleTermChange.bind(this)} onShuffle={this.handleShuffle.bind(this)} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3} blankTerm={this.handleBlankTerm.bind(this)}
          initialLoad={this.initialLoad}/>
          </div>
-         <Row>
+         <Row>  <Col xs="12" md="12" sm="12" lg="12">
            <div id="controls">
            <div><RadioButtons handleOptionChange={this.handleOptionChange} selectedOption={this.state.selectedOption}/></div>< SavePreview showPreview={this.handlePreview.bind(this)}  createPhrase={this.createPhrase.bind(this)} /><div id="url_field"><UrlField url={this.state.url}/></div>
            </div>
+            </Col>
         </Row>
 
         <Row id="footer">
@@ -185,7 +188,7 @@ class App extends Component {
   showPage(){
        return(
         <Router>
-         <ShowPage words={this.state.words} images={this.state.images} shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3}  fetchPhrase={this.handlePhraseFetch.bind(this)}/>
+         <ShowPage back={this.mainPage.bind(this)} words={this.state.words} images={this.state.images} shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3}  fetchPhrase={this.handlePhraseFetch.bind(this)}/>
         </Router>
        )
      }

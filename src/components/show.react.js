@@ -3,8 +3,14 @@ import '../styles/show.css';
 import '../styles/obnoxious.css';
 import '../styles/animate.css';
 import giphy from '../assets/images/giphy.png'
+import PreviewNotice from '../components/preview_notice.react.js'
+
 
 export default class ShowPage extends React.Component {
+
+  handleBack(){
+    this._reactInternalInstance._context.router.history.goBack()
+  }
 
   componentDidMount() {
     var url_bar = this._reactInternalInstance._context.router.route.location.pathname.slice(1)
@@ -14,6 +20,7 @@ export default class ShowPage extends React.Component {
      if ( url_bar !== "show!" ) {
     this.props.fetchPhrase(url_token)
      }
+
    }
 
   render(props) {
@@ -22,6 +29,7 @@ export default class ShowPage extends React.Component {
 
 
   <container id="container">
+    <PreviewNotice back={this.handleBack.bind(this)}/>
 
     <div id="content" className={this.props.words[0].gif_theme}>
 
@@ -35,8 +43,11 @@ export default class ShowPage extends React.Component {
 
     <div className="horizontal div3" id={this.props.words[1].gif_theme}>
           <img className="background-image" src={"https://media.giphy.com/media/" + this.props.images.images_2[`${this.props.shuffle_2}`] + "/giphy.gif"} alt="2"/>
+
         </div>
         <h1 className="animated intensifies bounceInDown" id={this.props.words[1].text_theme}> {this.props.term_2} </h1>
+
+
     </div>
 
     <div id="secondary" className={this.props.words[2].gif_theme}>
