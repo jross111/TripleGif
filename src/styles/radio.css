@@ -1,23 +1,25 @@
 
-input[type="radio"]{
-    vertical-align:top;
-    }
-
 #Vanilla{
 font-size: 25px;
-
-
+margin-bottom: 10px;
+margin-top: 10px;
+margin-right: 10px;
 }
 
 #Spicy{
 font-size: 25px;
+margin-bottom: 10px;
+margin-top: 10px;
+margin-right: 10px;
 
 
 }
 
 #Party{
 font-size: 25px;
-
+margin-bottom: 10px;
+margin-top: 10px;
+margin-right: 10px;
 
 
 }
@@ -26,6 +28,9 @@ font-size: 25px;
   padding-top: 0px;
   padding-bottom: 20px;
   padding-top: 10px;
+  text-align: center;
+
+
 }
 
 #buttons {
@@ -35,6 +40,9 @@ font-size: 25px;
 #pick_a_theme {
   text-align: center;
   margin-bottom: 0px;
+  font-weight: bold;
+  margin-bottom: 11px;
+  margin-top: 10px;
 }
 
 .float_center {

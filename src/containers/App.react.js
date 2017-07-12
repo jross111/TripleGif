@@ -63,6 +63,7 @@ class App extends Component {
       this.triggerFetchGifs = debounce(200, this.triggerFetchGifs.bind(this))
       this.initialLoad = this.initialLoad.bind(this)
 
+
   }
 
 
@@ -170,7 +171,7 @@ class App extends Component {
          <Row>
          <Col xs="12" md="12" sm="12" lg="12">
            <div id="controls">
-           <div><RadioButtons handleOptionChange={this.handleOptionChange} selectedOption={this.state.selectedOption}/></div>< SavePreview showPreview={this.handlePreview.bind(this)}  createPhrase={this.createPhrase.bind(this)} /><div id="url_field"><UrlField url={this.state.url}/></div>
+           <div><RadioButtons allSearch={this.handleAllSearches} handleOptionChange={this.handleOptionChange} selectedOption={this.state.selectedOption}/></div>< SavePreview showPreview={this.handlePreview.bind(this)}  createPhrase={this.createPhrase.bind(this)} /><div id="url_field"><UrlField url={this.state.url}/></div>
            </div>
             </Col>
         </Row>
