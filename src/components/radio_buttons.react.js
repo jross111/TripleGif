@@ -1,15 +1,19 @@
 import React from 'react';
-import { Form, FormGroup, Label, Input, Row, Col} from 'reactstrap';
+import { Form, FormGroup, Label, Input} from 'reactstrap';
 import '../styles/radio.css';
 
 
 export default class RadioButtons extends React.Component {
   render(props) {
     return (
-
+<div>
+  <p id="pick_a_theme">PICK A THEME</p>
 <div className="float_center">
+
 <div className="child">
+
       <Form inline id="radio_buttons" className="radio-label-vertical-wrapper">
+
       <FormGroup check>
            <Label check>
              <Input onChange={this.props.handleOptionChange} id="Vanilla" type="radio" name="radio1" value="vanilla" checked={this.props.selectedOption === "vanilla"} />{' '}
@@ -33,12 +37,13 @@ export default class RadioButtons extends React.Component {
 
 
 
-</Form>
+            </Form>
        </div>
 
 
 
       </div>
+  </div>
 
     );
   }

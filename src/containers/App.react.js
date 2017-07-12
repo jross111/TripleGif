@@ -24,9 +24,9 @@ class App extends Component {
     super()
       this.state = {
       images:{
-        images_1: ["3o7bu23spYlsT4DVyU"],
-        images_2: ["3og0IFR60Q6MCFoZ8c"],
-        images_3: ["3o7budWd6zLPn3mibK"]
+        images_1: ["26gR0ojVae5XAPcKA"],
+        images_2: ["3o7bufmhtIhZkP4pKE"],
+        images_3: ["3o7bu4qAvyxdJtYYFi"]
       },
 
       words:
@@ -167,7 +167,8 @@ class App extends Component {
          <ThreeCardGroup shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} images={this.state.images} onTermChange={this.handleTermChange.bind(this)} onShuffle={this.handleShuffle.bind(this)} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3} blankTerm={this.handleBlankTerm.bind(this)}
          initialLoad={this.initialLoad}/>
          </div>
-         <Row>  <Col xs="12" md="12" sm="12" lg="12">
+         <Row>
+         <Col xs="12" md="12" sm="12" lg="12">
            <div id="controls">
            <div><RadioButtons handleOptionChange={this.handleOptionChange} selectedOption={this.state.selectedOption}/></div>< SavePreview showPreview={this.handlePreview.bind(this)}  createPhrase={this.createPhrase.bind(this)} /><div id="url_field"><UrlField url={this.state.url}/></div>
            </div>

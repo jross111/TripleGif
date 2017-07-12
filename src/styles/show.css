@@ -301,6 +301,18 @@ position:absolute;
  display: block;
 }
 
+#link_back
+{
+position:absolute;
+  width: 100%;
+ top:0px;
+ padding: 10px;
+ line-height: 10px;
+ padding-right: 20px;
+ z-index: 98;
+ display: block;
+}
+
 #preview_mode_text {
   color: white;
 }

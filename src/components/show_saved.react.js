@@ -3,6 +3,7 @@ import '../styles/show.css';
 import '../styles/obnoxious.css';
 import '../styles/animate.css';
 import giphy from '../assets/images/giphy.png'
+import LinkBack from './link_back.react.js'
 
 
 export default class ShowPageSaved extends React.Component {
@@ -29,6 +30,7 @@ export default class ShowPageSaved extends React.Component {
       return (
 
     <container id="container">
+    <LinkBack/>
       <div id="content" className={this.props.words[0].gif_theme}>
         <div className= "horizontal div3" id={this.props.words[0].gif_theme}>
           <img className="background-image" src={"https://media.giphy.com/media/" + this.props.words[0].gif_id + "/giphy.gif"} alt="1"/>

@@ -1,30 +1,40 @@
+
+input[type="radio"]{
+    vertical-align:top;
+    }
+
 #Vanilla{
-font-size: 20px;
+font-size: 25px;
 
 
 }
 
 #Spicy{
-font-size: 20px;
+font-size: 25px;
 
 
 }
 
 #Party{
-font-size: 20px;
+font-size: 25px;
+
 
 
 }
 
 #radio_buttons {
   padding-top: 0px;
-  padding-bottom: 15px;
-
+  padding-bottom: 20px;
+  padding-top: 10px;
 }
 
 #buttons {
   padding-bottom: 12px;
+}
 
+#pick_a_theme {
+  text-align: center;
+  margin-bottom: 0px;
 }
 
 .float_center {
