@@ -20,15 +20,20 @@ font-size: 20px;
   padding-top: 0px;
   padding-bottom: 15px;
 
-  margin-left: 10px;
-  
-
-
-
 }
 
 #buttons {
   padding-bottom: 12px;
 
+}
 
+.float_center {
+  float: right;
+  position: relative;
+  left: -50%; /* or right 50% */
+  text-align: left;
+}
+.float_center > .child {
+  position: relative;
+  left: 50%;
 }

@@ -1,11 +1,14 @@
 import React from 'react';
-import { Form, FormGroup, Label, Input} from 'reactstrap';
+import { Form, FormGroup, Label, Input, Row, Col} from 'reactstrap';
 import '../styles/radio.css';
 
 
 export default class RadioButtons extends React.Component {
   render(props) {
     return (
+
+<div className="float_center">
+<div className="child">
       <Form inline id="radio_buttons" className="radio-label-vertical-wrapper">
       <FormGroup check>
            <Label check>
@@ -28,7 +31,15 @@ export default class RadioButtons extends React.Component {
               </Label>
             </FormGroup>
 
-      </Form>
+
+
+</Form>
+       </div>
+
+
+
+      </div>
+
     );
   }
 }
