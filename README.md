@@ -8,7 +8,7 @@ Made using the lovely open developer API from [Giphy](https://giphy.com/)
 
 ### Make a phrase:
 
-![Three Word Fraiser](http://preview.ibb.co/bYG0nk/Screen_Shot_2017_06_27_at_11_40_15.png)
+![Three Word Fraiser](https://image.ibb.co/eXAx0F/Screen_Shot_2017_07_13_at_09_25_56.png)
 
 ### Send them to your friends/enemies:
 
@@ -20,10 +20,6 @@ Made using the lovely open developer API from [Giphy](https://giphy.com/)
 
 We are pulling from the GIPHY API for the content, but there a couple of edgecases that require going through our own server first:
 
-
-### StopWords
-
-Some words like "I", "and", "the" can return GIFs that just don't make sense. So when this request comes in the TWF backend can jump in and provide some curated suggestions.
 
 [API Github Link](https://github.com/twf-back)
 
