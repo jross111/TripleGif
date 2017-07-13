@@ -6,6 +6,7 @@ margin-top: 10px;
 margin-right: 10px;
 }
 
+
 #Spicy{
 font-size: 25px;
 margin-bottom: 10px;
@@ -30,7 +31,6 @@ padding-left: 3px;
   padding-top: 0px;
   padding-bottom: 20px;
   padding-top: 10px;
-  text-align: center;
 
 
 
@@ -56,9 +56,10 @@ input[type='radio'], label{
   float: right;
   position: relative;
   left: -50%; /* or right 50% */
-  text-align: left;
+
 }
 .float_center > .child {
   position: relative;
   left: 50%;
+
 }
