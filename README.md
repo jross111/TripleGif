@@ -1,6 +1,7 @@
-# Three Word Fraiser
+# TripleGif.com
+
 Ever found it hard to express yourself using mere words?
- Simply type 3 words and this app will suggest how you could get your message across in Gif form.
+Simply type 3 words and this app will suggest how you could get your message across in Gif form.
 
 Made using the lovely open developer API from [Giphy](https://giphy.com/)
 
@@ -12,7 +13,7 @@ Made using the lovely open developer API from [Giphy](https://giphy.com/)
 
 ### Send them to your friends/enemies:
 
-![Three Word Fraiser](http://preview.ibb.co/meZmSk/Screen_Shot_2017_06_27_at_11_40_26.png)
+![Three Word Fraiser](https://image.ibb.co/cTxhZa/Screen_Shot_2017_07_13_at_09_56_19.png)
 
 [Frontend Github Link](https://github.com/jonathanandrewsuk/twf-front)
 
