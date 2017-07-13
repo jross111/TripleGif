@@ -11,7 +11,7 @@ const LinkBack = (props) => {
 
   return (
   <div id="link_back">
-    <a target="_blank" rel="noopener noreferrer" href="https://triplegif.com/"> <img src={image} alt="make your own message!"/>{' '} </a>
+    <a target="_blank" rel="noopener noreferrer" href="http://triplegif.com/"> <img src={image} alt="make your own message!"/>{' '} </a>
   </div>
 
   );

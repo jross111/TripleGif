@@ -72,7 +72,7 @@ class App extends Component {
     let word_2 = {text:this.state.term_2, gif_id: this.state.images.images_2[this.state.shuffle_2], text_theme: this.state.words[1].text_theme, gif_theme: this.state.words[1].gif_theme}
     let word_3 = {text:this.state.term_3, gif_id: this.state.images.images_3[this.state.shuffle_3], text_theme: this.state.words[2].text_theme, gif_theme: this.state.words[2].gif_theme}
     postPhrase(word_1, word_2, word_3)
-    .then(response => this.setState({url: `https://triplegif.com/show/${response.hash_token}`}))
+    .then(response => this.setState({url: `http://triplegif.com/show/${response.hash_token}`}))
   }
 
   handlePhraseFetch(url_token){
@@ -162,7 +162,7 @@ class App extends Component {
   mainPage(){
        return(
       <div>
-      <Link to="/" onClick={window.location.reload} style={{textDecoration: "none"}}><div id="title">Three Word Fraiser</div></Link>
+      <Link to="/" onClick={window.location.reload} style={{textDecoration: "none"}}><div id="title">TripleGif.com</div></Link>
 
       <div id="app-box">
          <ThreeCardGroup shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} images={this.state.images} onTermChange={this.handleTermChange.bind(this)} onShuffle={this.handleShuffle.bind(this)} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3} blankTerm={this.handleBlankTerm.bind(this)}
