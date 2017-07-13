@@ -1,6 +1,6 @@
 import React from 'react';
  import '../styles/three_card_group.css';
- import image from '../assets/images/twf-small.png'
+ import image from '../assets/images/tg-small.png'
 
 
 
