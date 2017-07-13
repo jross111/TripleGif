@@ -37,7 +37,7 @@ export default class RadioButtons extends React.Component {
          <FormGroup check>
               <Label check>
                 <Input onChange={this.props.handleOptionChange} id="Party" type="radio" name="radio1" value="party" checked={this.props.selectedOption === "party"} />{' '}
-               <span id="Party"  role="img" aria-label="Party">Party &nbsp;🎉&nbsp;&nbsp;&nbsp;</span>
+               <span id="Party"  role="img" aria-label="Party">Party &nbsp;🎉&nbsp;&nbsp;</span>
               </Label>
             </FormGroup>
 
