@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, FormGroup, Label, Input, Popover, PopoverTitle, PopoverContent } from 'reactstrap';
+import { Form, FormGroup, Label, Input} from 'reactstrap';
 import '../styles/radio.css';
 
 

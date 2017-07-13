@@ -72,7 +72,7 @@ class App extends Component {
     let word_2 = {text:this.state.term_2, gif_id: this.state.images.images_2[this.state.shuffle_2], text_theme: this.state.words[1].text_theme, gif_theme: this.state.words[1].gif_theme}
     let word_3 = {text:this.state.term_3, gif_id: this.state.images.images_3[this.state.shuffle_3], text_theme: this.state.words[2].text_theme, gif_theme: this.state.words[2].gif_theme}
     postPhrase(word_1, word_2, word_3)
-    .then(response => this.setState({url: `https://twftime.com/show/${response.hash_token}`}))
+    .then(response => this.setState({url: `https://triplegif.com/show/${response.hash_token}`}))
   }
 
   handlePhraseFetch(url_token){
