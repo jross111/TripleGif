@@ -15,7 +15,7 @@ export default class Search extends React.Component {
       this.setState({term});
       this.props.onTermChange(term, this.props.number, this.props.term_number, this.props.shuffle_number);
     } else {
-      this.props.blankTerm(term, this.props.number, this.props.term_number)
+      this.props.blankTerm(term, this.props.number, this.props.term_number, this.props.shuffle_number)
     }
   }
 

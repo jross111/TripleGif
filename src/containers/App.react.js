@@ -113,8 +113,8 @@ class App extends Component {
   }
 
   handleTermChange(term, number, term_number, shuffle_num) {
-    this.setState({[term_number]: term})
     this.setState({[shuffle_num]: 0})
+    this.setState({[term_number]: term})
     this.setState({url: ""})
     this.triggerFetchGifs(term, number, term_number)
   }
@@ -128,8 +128,9 @@ class App extends Component {
         this.setState( Object.assign({},this.state,{images:{...this.state.images,[number]:gifObjIds}}) )} })
   }
 
-  handleBlankTerm(term, number, term_number){
-    this.setState( Object.assign({},this.state,{images:{...this.state.images,[number]:["iF3M9gPPCdulq"]}}) )
+  handleBlankTerm(term, number, term_number, shuffle_num){
+    this.setState({[shuffle_num]: 0})
+    this.setState( Object.assign({},this.state,{images:{...this.state.images,[number]:Array(25).fill("iF3M9gPPCdulq")}}) )
     this.setState({[term_number]: term})
   }
 
