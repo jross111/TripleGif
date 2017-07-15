@@ -9,18 +9,15 @@ import PreviewNotice from '../components/preview_notice.react.js'
 export default class ShowPage extends React.Component {
 
   handleBack(){
-    this._reactInternalInstance._context.router.history.goBack()
+    window.history.back();
   }
 
   componentDidMount() {
-    var url_bar = this._reactInternalInstance._context.router.route.location.pathname.slice(1)
-    var url_token = this._reactInternalInstance._context.router.route.location.pathname.slice(6)
-    console.log(url_bar)
-    console.log(url_token)
+    var url_bar = window.location.pathname.slice(1)
+    var url_token = window.location.pathname.slice(6)
      if ( url_bar !== "show!" ) {
     this.props.fetchPhrase(url_token)
      }
-
    }
 
   render(props) {
@@ -46,8 +43,6 @@ export default class ShowPage extends React.Component {
 
         </div>
         <h1 className="animated intensifies bounceInDown" id={this.props.words[1].text_theme}> {this.props.term_2} </h1>
-
-
     </div>
 
     <div id="secondary" className={this.props.words[2].gif_theme}>

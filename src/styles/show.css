@@ -2,33 +2,24 @@
 #container {
     width: 100%;
     margin: 0 auto;
-
-
-
-
 }
 
 #primary {
     float: left;
     width: 34%;
     height:100vh;
-
-
-
 }
 
 #content {
     float: left;
     width: 33%;
     height:100vh;
-
 }
 
 #secondary {
     float: left;
     width: 33%;
     height:100vh;
-
 }
 
 #title {
@@ -40,8 +31,6 @@
 .background-image {
   width: 100%;
   object-fit: cover;
-
-
 }
 
 #text_1_vanilla {
@@ -54,7 +43,6 @@
    font-size: 6vw;
    text-align: center;
    -webkit-text-stroke: 0.2vw black;
-
 }
 
 #text_2_vanilla {
@@ -79,6 +67,29 @@
    text-align: center;
    -webkit-text-stroke: 0.2vw black;
 }
+
+#content.gif_1_vanilla {
+    float: left;
+    width: 34%;
+    height:100vh;
+    background-color: #FFFFFF;
+}
+
+#primary.gif_2_vanilla {
+    float: left;
+    width: 33%;
+    height:100vh;
+    background-color: #FFFFFF;
+}
+
+#secondary.gif_3_vanilla {
+    float: left;
+    width: 33%;
+    height:100vh;
+    background-color: #FFFFFF;
+}
+
+
 
 #text_1_spicy {
    position: absolute;
@@ -359,7 +370,6 @@ background-repeat: repeat-x;
   overflow: hidden;
 }
 .gif_1_party  b {
-
 
   width: 478px;
   height: 480px;
