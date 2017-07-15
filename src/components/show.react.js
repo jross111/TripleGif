@@ -9,7 +9,7 @@ import PreviewNotice from '../components/preview_notice.react.js'
 export default class ShowPage extends React.Component {
 
   handleBack(){
-    window.history.back();
+    this._reactInternalInstance._context.router.history.goBack()
   }
 
   componentDidMount() {
