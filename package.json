@@ -17,6 +17,7 @@
     "superagent": "^3.5.2",
     "throttle-debounce": "^1.0.1"
   },
+  "engine": "node 6.11.1",
   "devDependencies": {
     "react-scripts": "1.0.7"
   },
