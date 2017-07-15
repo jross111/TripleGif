@@ -45,7 +45,7 @@ export default class ShowPage extends React.Component {
           <img className="background-image" src={"https://media.giphy.com/media/" + this.props.images.images_2[`${this.props.shuffle_2}`] + "/giphy.gif"} alt="2"/>
 
         </div>
-        <h1 className="animated intensifies bounceInDown" id={this.props.words[1].text_theme}> {this.props.term_2} </h1>
+        <h1 className="animated intensifies bounceInDown" z id={this.props.words[1].text_theme}> {this.props.term_2} </h1>
 
 
     </div>
