@@ -9,14 +9,12 @@ import PreviewNotice from '../components/preview_notice.react.js'
 export default class ShowPage extends React.Component {
 
   handleBack(){
-    this._reactInternalInstance._context.router.history.goBack()
+     window.history.back();
   }
 
   componentDidMount() {
-    var url_bar = this._reactInternalInstance._context.router.route.location.pathname.slice(1)
-    var url_token = this._reactInternalInstance._context.router.route.location.pathname.slice(6)
-    console.log(url_bar)
-    console.log(url_token)
+    var url_bar = window.location.pathname.slice(1)
+    var url_token = window.location.pathname.slice(6)
      if ( url_bar !== "show!" ) {
     this.props.fetchPhrase(url_token)
      }
@@ -45,7 +43,7 @@ export default class ShowPage extends React.Component {
           <img className="background-image" src={"https://media.giphy.com/media/" + this.props.images.images_2[`${this.props.shuffle_2}`] + "/giphy.gif"} alt="2"/>
 
         </div>
-        <h1 className="animated intensifies bounceInDown" z id={this.props.words[1].text_theme}> {this.props.term_2} </h1>
+        <h1 className="animated intensifies bounceInDown"  id={this.props.words[1].text_theme}> {this.props.term_2} </h1>
 
 
     </div>

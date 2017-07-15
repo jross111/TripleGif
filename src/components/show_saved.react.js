@@ -10,8 +10,8 @@ export default class ShowPageSaved extends React.Component {
 
 
   componentDidMount() {
-    var url_bar = this._reactInternalInstance._context.router.route.location.pathname.slice(1)
-    var url_token = this._reactInternalInstance._context.router.route.location.pathname.slice(6)
+    var url_bar = window.location.pathname.slice(1)
+    var url_token = window.location.pathname.slice(6)
      if ( url_bar !== "show" ) {
     this.props.fetchPhrase(url_token)
 
