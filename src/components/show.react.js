@@ -9,12 +9,14 @@ import PreviewNotice from '../components/preview_notice.react.js'
 export default class ShowPage extends React.Component {
 
   handleBack(){
-     window.history.back();
+    this._reactInternalInstance._context.router.history.goBack()
   }
 
   componentDidMount() {
-    var url_bar = window.location.pathname.slice(1)
-    var url_token = window.location.pathname.slice(6)
+    var url_bar = this._reactInternalInstance._context.router.route.location.pathname.slice(1)
+    var url_token = this._reactInternalInstance._context.router.route.location.pathname.slice(6)
+    console.log(url_bar)
+    console.log(url_token)
      if ( url_bar !== "show!" ) {
     this.props.fetchPhrase(url_token)
      }
