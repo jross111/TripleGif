@@ -392,11 +392,24 @@ background-repeat: repeat-x;
 }
 
 
-#unicorn {
+.gif_1_party #unicorn {
   height: 30vh;
   margin-right: 0px;
   margin-bottom: 0px;
 }
+
+.gif_1_vanilla #unicorn {
+  height: 0vh;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+.gif_1_spicy #unicorn {
+  height: 0vh;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
 
 
 
