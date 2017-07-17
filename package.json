@@ -1,8 +1,6 @@
 {
   "name": "twf-front",
-  "engines": {
-    "node": "8.1.3"
-  },
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
