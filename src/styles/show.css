@@ -380,8 +380,7 @@ background-repeat: repeat-x;
   overflow: hidden;
 }
 .gif_1_party  b {
-  height: 20vw;
-  width: 20vw;
+  height: 20vh;
   border-radius: 0%;
 
   zoom: 0.74;
@@ -392,11 +391,29 @@ background-repeat: repeat-x;
   animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
 }
 
-#unicorn {
+
+
+
+.gif_1_party #unicorn {
   height: 30vh;
   margin-right: 0px;
   margin-bottom: 0px;
 }
+
+.gif_1_vanilla #unicorn {
+  height: 0vh;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+.gif_1_spicy #unicorn {
+  height: 0vh;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+
+
 
 @-webkit-keyframes moveX {
   from { left: 0; } to { left: 70vw; }
