@@ -1,6 +1,5 @@
 {
   "name": "twf-front",
-  "version": "0.2.0",
   "engines": {
     "node": "8.1.3"
   },
