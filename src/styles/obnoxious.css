@@ -359,34 +359,28 @@
   }
 }
 
-#text_1_spicy.intensifies {
-  animation-timing-function: ease-out;
-  transform-origin: bottom center;
-  animation-name: intensifies;
-  animation-duration: 2s;
 
-
-}
-
-#text_2_spicy.intensifies {
-  animation-timing-function: ease-out;
-  transform-origin: bottom center;
-  animation-name: intensifies;
-  animation-duration: 2s;
-}
-
-#text_3_spicy.intensifies {
-  animation-timing-function: ease-out;
-  transform-origin: bottom center;
-  animation-name: intensifies;
-  animation-duration: 2s;
-}
 
 /**
  * Animations
  */
 .animated {
   animation-fill-mode: both;
+}
+
+.bounceInLeft.intensifies#text_1_spicy {
+  animation-name: intensifies;
+  animation-duration: 0.5s;
+}
+
+.bounceInLeft.intensifies#text_2_spicy {
+  animation-name: intensifies;
+  animation-duration: 0.5s;
+}
+
+.bounceInLeft.intensifies#text_3_spicy {
+  animation-name: intensifies;
+  animation-duration: 0.5s;
 }
 
 /**
