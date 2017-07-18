@@ -22,21 +22,21 @@ export default class RadioButtons extends React.Component {
       <FormGroup check>
         <h4 id="pick_a_theme">Theme:&nbsp;&nbsp;</h4>
            <Label check>
-             <Input onChange={this.props.handleOptionChange} id="Vanilla" type="radio" name="radio1" value="vanilla" checked={this.props.selectedOption === "vanilla"} />{' '}
+             <Input tabIndex = "2"  onChange={this.props.handleOptionChange} id="Vanilla" type="radio" name="radio1" value="vanilla" checked={this.props.selectedOption === "vanilla"} />{' '}
               <span id="Vanilla" role="img" aria-label="Vanilla">Vanilla🍦</span>
            </Label>
          </FormGroup>
 
       <FormGroup check>
            <Label check>
-             <Input onChange={this.props.handleOptionChange} id="Spicy" type="radio" name="radio1" value="spicy" checked={this.props.selectedOption === "spicy"} />{' '}
+             <Input tabIndex = "3"  onChange={this.props.handleOptionChange} id="Spicy" type="radio" name="radio1" value="spicy" checked={this.props.selectedOption === "spicy"} />{' '}
             <span id="Spicy" role="img" aria-label="Spicy">Spicy🌶️</span>
            </Label>
          </FormGroup>
 
          <FormGroup check>
               <Label check>
-                <Input onChange={this.props.handleOptionChange} id="Party" type="radio" name="radio1" value="party" checked={this.props.selectedOption === "party"} />{' '}
+                <Input tabIndex = "4"  onChange={this.props.handleOptionChange} id="Party" type="radio" name="radio1" value="party" checked={this.props.selectedOption === "party"} />{' '}
                <span id="Party"  role="img" aria-label="Party">Party🎉</span>
               </Label>
             </FormGroup>
