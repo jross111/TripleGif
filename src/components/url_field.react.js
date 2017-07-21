@@ -26,10 +26,10 @@ export default class UrlField extends React.Component {
   render() {
 
     return (
-           <Form>
+           <Form >
              <CopyToClipboard text={this.props.url}
                onCopy={() => this.setState({copied: true})}>
-               <span tabIndex = "7"  id="url"><Input  readOnly="true" size="lg" placeholder="Save to Generate a Link" value={this.props.url} onClick={this.handleCopy} /></span>
+               <span id="url"><Input readOnly="true" size="lg" placeholder="Save to Generate a Link" value={this.props.url} onClick={this.handleCopy} /></span>
              </CopyToClipboard>
              {this.state.copied ?
                <Popover isOpen={this.state.visible} target="url" toggle={this.onDismiss}>

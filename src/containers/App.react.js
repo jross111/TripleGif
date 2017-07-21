@@ -188,7 +188,7 @@ class App extends Component {
 
       <div id="app-box">
          <ThreeCardGroup shuffle_1={this.state.shuffle_1} shuffle_2={this.state.shuffle_2} shuffle_3={this.state.shuffle_3} images={this.state.images} onTermChange={this.handleTermChange.bind(this)} onShuffle={this.handleShuffle.bind(this)} term_1={this.state.term_1} term_2={this.state.term_2} term_3={this.state.term_3} blankTerm={this.handleBlankTerm.bind(this)}
-         initialLoad={this.initialLoad}/>
+         initialLoad={this.initialLoad} disableButtons={this.state.disableButtons}/>
          </div>
          <Row>
          <Col xs="12" md="12" sm="12" lg="12">
