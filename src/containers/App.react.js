@@ -52,7 +52,9 @@ class App extends Component {
       term_2: "",
       term_3: "",
       url: "",
-      selectedOption: "vanilla"
+      selectedOption: "vanilla",
+      disableButtons: true,
+      disableSaveButton: true
 
       }
       this.mainPage = this.mainPage.bind(this)
@@ -61,6 +63,7 @@ class App extends Component {
       this.handleOptionChange = this.handleOptionChange.bind(this)
       this.handleShuffle = this.handleShuffle.bind(this)
       this.triggerFetchGifs = debounce(200, this.triggerFetchGifs.bind(this))
+      this.saveButtonDisabler = debounce(30, this.saveButtonDisabler.bind(this))
       this.initialLoad = this.initialLoad.bind(this)
 
 
@@ -73,6 +76,8 @@ class App extends Component {
     let word_3 = {text:this.state.term_3, gif_id: this.state.images.images_3[this.state.shuffle_3], text_theme: this.state.words[2].text_theme, gif_theme: this.state.words[2].gif_theme}
     postPhrase(word_1, word_2, word_3)
     .then(response => this.setState({url: `http://www.triplegif.com/show/${response.hash_token}`}))
+    .then(response => this.saveButtonDisabler())
+
   }
 
   handlePhraseFetch(url_token){
@@ -101,6 +106,8 @@ class App extends Component {
       ]
     })
     this.setState({url: ""})
+    this.saveButtonDisabler()
+
   }
 
   initialLoad(term, number, term_number){
@@ -110,6 +117,7 @@ class App extends Component {
       if (this.state[current_term] !== "") {
         this.setState( Object.assign({},this.state,{images:{...this.state.images,[number]:gifObjIds}}) )} })
 
+
   }
 
   handleTermChange(term, number, term_number, shuffle_num) {
@@ -117,6 +125,8 @@ class App extends Component {
     this.setState({[term_number]: term})
     this.setState({url: ""})
     this.triggerFetchGifs(term, number, term_number)
+    this.setState({disableButtons: false})
+    this.saveButtonDisabler()
   }
 
   triggerFetchGifs(term, number, term_number){
@@ -157,7 +167,18 @@ class App extends Component {
         this.setState({url: ""})
       }
     } else { current_shuffle = 0 }
+      this.saveButtonDisabler()
    }
+
+   saveButtonDisabler = () => {
+     if (this.state.url === ""){
+       this.setState({disableSaveButton: false})
+    } else {
+      this.setState({disableSaveButton: true})
+    }
+   }
+
+
 
 
   mainPage(){
@@ -172,7 +193,7 @@ class App extends Component {
          <Row>
          <Col xs="12" md="12" sm="12" lg="12">
            <div id="controls">
-           <div><RadioButtons allSearch={this.handleAllSearches} handleOptionChange={this.handleOptionChange} selectedOption={this.state.selectedOption}/></div>< SavePreview showPreview={this.handlePreview.bind(this)}  createPhrase={this.createPhrase.bind(this)} /><div id="url_field"><UrlField url={this.state.url}/></div>
+           <div><RadioButtons disableButtons={this.state.disableButtons} allSearch={this.handleAllSearches} handleOptionChange={this.handleOptionChange} selectedOption={this.state.selectedOption}/></div>< SavePreview disableSaveButton={this.state.disableSaveButton} disableButtons={this.state.disableButtons} showPreview={this.handlePreview.bind(this)}  createPhrase={this.createPhrase.bind(this)} /><div id="url_field"><UrlField url={this.state.url}/></div>
            </div>
             </Col>
         </Row>

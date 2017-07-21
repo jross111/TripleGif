@@ -11,8 +11,8 @@ const SavePreview = (props) => {
     <div>
 
     <ButtonGroup style={button_group}>
-      <Button tabIndex = "5"  size="lg" color="secondary" style={btn_yellow} onClick={props.showPreview}>Preview</Button>
-      <Button tabIndex = "6"  size="lg" color="success" style={btn_pink} onClick={props.createPhrase}>Save</Button>
+      <Button disabled ={props.disableButtons} tabIndex = "5"  size="lg" color="secondary" style={btn_yellow} onClick={props.showPreview}>Preview</Button>
+      <Button disabled ={props.disableSaveButton} tabIndex = "6"  size="lg" color="success" style={btn_pink} onClick={props.createPhrase}>Save</Button>
     </ButtonGroup>
 
 
