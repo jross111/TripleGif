@@ -109,7 +109,7 @@
 #text_2_spicy {
    position: absolute;
    top: 40%;
-   width: inherit;
+   width: 34%;
    color: #8b0000;
    font-family: 'Russo One', sans-serif;
    font-size: 6vw;
@@ -186,7 +186,7 @@
    vertical-align: middle;
    display: inline-block;
    left: auto;
-   width: 33%;
+   width: inherit;
    color: #FF69B4;
    font-family: 'Anton', sans-serif;
    font-size: 8vw;
@@ -203,7 +203,7 @@
   transform: translateY(-50%);
 
    left: auto;
-   width: 34%;
+   width: 35%;
    color: #FF69B4;
    font-family: 'Anton', sans-serif;
    font-size: 8vw;
@@ -217,7 +217,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-   width: 33%;
+   width: inherit;
    color: #FF69B4;
    font-family: 'Anton', sans-serif;
    font-size: 8vw;
@@ -358,6 +358,14 @@ position:absolute;
 text-align: center;
 
 }
+
+#loadingTextWarning {
+
+text-align: center;
+font-size: 10px;
+
+}
+
 
 .gif_1_party {
   position: inherit;

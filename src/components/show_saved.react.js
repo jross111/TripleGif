@@ -57,7 +57,7 @@ export default class ShowPageSaved extends React.Component {
       );
     }
     else {
-      return <div><h1 id="loadingText">Three Word Fraiser</h1><p id="loadingText">Loading a phrase for you...</p></div>
+      return <div><h1 id="loadingText">TripleGif.com</h1><p id="loadingText">Loading a phrase for you...</p><p id="loadingTextWarning"> If this screen is visible for enough time to read this message either your internet is real slow or your URL isn't valid.</p></div>
     }
   }
 
