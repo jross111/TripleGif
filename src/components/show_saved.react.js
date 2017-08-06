@@ -10,8 +10,8 @@ export default class ShowPageSaved extends React.Component {
 
 
   componentDidMount() {
-    var url_bar = this._reactInternalInstance._context.router.route.location.pathname.slice(1)
-    var url_token = this._reactInternalInstance._context.router.route.location.pathname.slice(6)
+    var url_bar = window.location.pathname.slice(1)
+    var url_token = window.location.pathname.slice(6)
      if ( url_bar !== "show" ) {
     this.props.fetchPhrase(url_token)
 
@@ -57,7 +57,7 @@ export default class ShowPageSaved extends React.Component {
       );
     }
     else {
-      return <div><h1 id="loadingText">TripleGif.com</h1><p id="loadingText">Loading a phrase for you...</p><p id="loadingTextWarning"> If this screen is visible for enough time to read this message either your internet is real slow or your URL isn't valid.</p></div>
+      return <div><h1 id="loadingText">TripleGif.com</h1><p id="loadingText">Loading a phrase for you...</p><p id="loadingTextWarning"> If this screen is visible for more than a few seconds either your internet is real slow or something went wrong. (Double check the URL is valid).</p></div>
     }
   }
 
