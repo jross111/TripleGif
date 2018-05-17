@@ -15,14 +15,14 @@ Made using the lovely open developer API from [Giphy](https://giphy.com/)
 
 ![Three Word Fraiser](https://image.ibb.co/cTxhZa/Screen_Shot_2017_07_13_at_09_56_19.png)
 
-[Frontend Github Link](https://github.com/jonathanandrewsuk/twf-front)
+[Frontend Github Link](https://github.com/jonathanandrewsuk/triplegif)
 
 ## Associated API
 
 We are pulling from the GIPHY API for the content, but there a couple of edgecases that require going through our own server first:
 
 
-[API Github Link](https://github.com/twf-back)
+[API Github Link](https://github.com/jonathanandrewsuk/twf-back)
 
 ## Tech
 

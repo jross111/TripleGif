@@ -14,7 +14,6 @@ export default class ShowPageSaved extends React.Component {
     var url_token = window.location.pathname.slice(6)
      if ( url_bar !== "show" ) {
     this.props.fetchPhrase(url_token)
-
      }
    }
 
